@@ -1,5 +1,5 @@
 package community;
 
 public class CommunityBean {
-	public String symbol,workRoom,count,contents;
+	public String symbol,workRoom,count;
 }
