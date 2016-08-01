@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,19 +17,16 @@ h1 {text-align:center;}
 
 <form  action="login.jsp">
 <div id="center">
-<h1>»∏ø¯ ∞°¿‘</h1>
+<h1>ÌöåÏõê Í∞ÄÏûÖ</h1>
 
-&nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D: <input  type="text" placeholder="id" value=""><br>
-&nbsp;&nbsp;Password: <input type="text" placeholder="Password" value=""><br>
+ <textarea rows="1" cols="12"> I       D:</textarea></a> <input  type="text" placeholder="id" value=""><br>
+<p> Password:</p> <input type="text" placeholder="Password" value=""><br>
 &nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;    : <input type="text" placeholder="Name" value=""><br>
-&nbsp;&nbsp;Gender&nbsp;&nbsp;&nbsp;&nbsp;  : <input type="text" placeholder="º∫∫∞" value=""><br>
-&nbsp;&nbsp;Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   : <input type="text" placeholder="¿Ãø°π– ¡÷º“" value=""><br>
+&nbsp;&nbsp;Gender&nbsp;&nbsp;&nbsp;&nbsp;  : <input type="text" placeholder="ÏÑ±Î≥Ñ" value=""><br>
+&nbsp;&nbsp;Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   : <input type="text" placeholder="Ïù¥ÏóêÎ∞Ä Ï£ºÏÜå" value=""><br>
 &nbsp;&nbsp;Birth&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   : <input type="text" placeholder="1900-01-01" value=""><br>
 &nbsp;&nbsp;phone&nbsp;&nbsp;&nbsp;&nbsp;   : <input type="text" placeholder="010-0000-0000" value=""><br>
-&nbsp;&nbsp;Address&nbsp;&nbsp;&nbsp;: <input type="text" placeholder="¡÷º“" value=""><br>
-&nbsp;&nbsp;Intro&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   : <input type="text" placeholder="¿⁄±‚ º“∞≥" value=""><br>
-&nbsp;&nbsp;SNS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" placeholder="∞¸∑√ SNS" value=""><br>
-&nbsp;&nbsp;profileImg: <input type="text" placeholder="º“∞≥ ¿ÃπÃ¡ˆ" value=""><br>
+
 
 
 
