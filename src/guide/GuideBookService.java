@@ -1,5 +1,5 @@
 package guide;
 
 public interface GuideBookService {
-	public GuideBookBean search ();
+	public void search(GuideBookBean bean);
 }

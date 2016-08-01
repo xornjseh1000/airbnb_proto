@@ -13,9 +13,10 @@
 	</classpathentry>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry exported="true" kind="lib" path="C:/eclipse/cos.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/eclipse/jstl.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/eclipse/servlet-api.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/eclipse/standard.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/oraclexe/app/oracle/product/11.2.0/server/jdbc/lib/ojdbc6.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/hb2002/eclipse/eclipse/cos (1).jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/hb2002/eclipse/eclipse/jstl (1).jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/hb2002/eclipse/eclipse/servlet-api (1).jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/hb2002/eclipse/eclipse/standard (1).jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
