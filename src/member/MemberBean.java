@@ -91,6 +91,15 @@ public class MemberBean {
 	public void setProfileImg(String profileImg) {
 		this.profileImg = profileImg;
 	}
+
+	@Override
+	public String toString() {
+		return "MemberBean [id=" + id + ", pw=" + pw + ", name=" + name + ", gender=" + gender + ", email=" + email
+				+ ", birth=" + birth + ", phone=" + phone + ", address=" + address + ", intro=" + intro + ", sns=" + sns
+				+ ", profileImg=" + profileImg + "]";
+	}
+	
+	
 }
 
 

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,11 +13,12 @@ input {text-align:center;}
 </head>
 <body>
 
-<form  action="main.jsp">
+<form  action="${context}/member.do" mathod="post">
 <div id="center">
-<center>I      D: <input style="center" type="text" placeholder="id" value=""></center>
-Password: <input type="text" placeholder="Password" value=""><br><br>
-<center><input type="submit" value="Submit"><button type="button" ><a href="regist.jsp ">х╦©Ь ╟║ют</button></center></a></div>
+<center>ID: <input style="center" type="text" placeholder="id" name="id"></center>
+Password: <input type="text" placeholder="Password" name="pw"><br><br>
+<input type="hidden" name="action" value="login">
+<center><input type="submit" value="К║°Й╥╦Л²╦"><button type="button" ><a href="${context}/member.do?page=regist">М ▄Л⌡░ Й╟─Л·┘</button></center></a></div>
 </form>
 
 </body>

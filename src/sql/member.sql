@@ -3,7 +3,7 @@ create table member(
 	pw varchar2(20),
 	name varchar2(20),
 	gender varchar2(10),
-	email varchar2(20),
+	email varchar2(50),
 	birth varchar2(20),
 	phone varchar2(15),
 	address varchar2(100),
@@ -12,6 +12,8 @@ create table member(
 	profile_img varchar2(20)
 );
 
+
+delete from member where id ='kim';
 select * from member;
 
 insert into member(id,pw,name,gender,email,birth,phone,address,intro,sns,profile_img) 

@@ -19,30 +19,22 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public void regist(MemberBean mBean) {
-		dao.regist(mBean);
+	public String regist(MemberBean mBean) {
+		String result ="";
+		if (dao.regist(mBean) == 1) {
+			result = dao.findById(mBean.getId()).getName();
+		}
+		return result;
 	}
 
 	@Override
 	public String login(MemberBean member) {
-		/*
-		 * MemberBean mBean = new MemberBean();
-		 */ // 2.로그인
-		/*
-		 * if (dao.login(member)) { session = dao.findById(mBean.getId());
-		 * mBean.setId(session.getId()); mBean.setPw(session.getPw());
-		 * mBean.setName(session.getName());
-		 * mBean.setGender(session.getGender());
-		 * mBean.setEmail(session.getEmail());
-		 * mBean.setBirth(session.getBirth());
-		 * mBean.setPhone(session.getPhone());
-		 * mBean.setAddress(session.getAddress());
-		 * mBean.setIntro(session.getIntro()); mBean.setSns(session.getSns());
-		 * mBean.setProfileImg(session.getProfileImg()); } else {
-		 * session.setId("fail"); } System.out.println("서비스로그인결과?" +
-		 * session.getId());
-		 */
-		return null;
+		if (dao.login(member)) {
+			session = dao.findById(member.getId());
+		}else{
+			member.setId("fail");
+		}
+	return null;
 	}
 
 	@Override

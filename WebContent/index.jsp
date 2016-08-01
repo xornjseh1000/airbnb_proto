@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
 <head>
 <title>index</title>
@@ -23,7 +22,7 @@
 			<div data-text-content="true"
 				style="font-size: 10px; color: rgb(255, 255, 255); line-height: 2.5em; border-radius: 4px; text-align: center; background-color: rgb(52, 152, 219);"
 				class="">
-				<a href="${context}/member.do ">회원가입</a>
+				<a href="${context}/member.do?page=regist ">회원가입</a>
 			</div>
 		</div>
 		<div data-obj-id="Rl0On" data-obj-type="element"
@@ -41,7 +40,7 @@
 			<div data-text-content="true"
 				style="font-size: 10px; color: rgb(255, 255, 255); line-height: 2.5em; border-radius: 4px; text-align: center; background-color: rgb(52, 152, 219);"
 				class="">
-				<a href="${context}/host.do">호스팅하기</a>
+				<a href="${context}/host.do?page=hosting">호스팅하기</a>
 			</div>
 		</div>
 	</div>

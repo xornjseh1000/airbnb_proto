@@ -37,12 +37,15 @@
 <body>
 	<div id = center>
 	<span class = "meta"><h1>어떤 유형의 숙소인가요?</h1></span>	<br /><br /><br /><br />
+	<form action="${context}/host.do?page=hosting2" method="post">
 	<input type="radio" name = "rooms" value = "all"/> 집 전체 <br /><br />
 	<input type="radio" name = "rooms" value = "single"/> 개인실 <br /><br />
 	<input type="radio" name = "rooms" value = "multi"/> 다인실 <br /><br /><br /><br />
+	<input type="hidden" name="action" value="regist"/>
 	
-	<a href="index.jsp"><button class="button button2">이전</button></a>
-	<a href="hosting2.jsp"><button class="button button2">다음</button></a>
+	<input type="submit" value="다음">
+	</form>
+	<a href="${context}/host.do?page=host"><button class="button button2">이전</button></a>
 	</div>
 </body>
 </html>

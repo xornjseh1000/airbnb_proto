@@ -54,7 +54,7 @@ div{   height: 200px;
 		 <span class="meta">이하주소를 입력해주세요</span>    <input type="text" name="address4" placeholder = "ex)월드컵APT 104동 1303호"/><br />
 	
 	<a href="hosting.jsp"><button class="button button2">이전</button></a>
-		<input type="submit" class="button button2" ><a href="hosting3.jsp">다음</a>
+		<input type="submit" class="button button2" ><a href="${context}/host.do?page=hosting3">다음</a>
 	</div>
 </body>
 </html>

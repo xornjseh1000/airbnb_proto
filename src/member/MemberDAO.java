@@ -33,20 +33,19 @@ public class MemberDAO {
 		String sql = "insert into member(ID,PW,NAME,GENDER,EMAIL,BIRTH,PHONE,ADDRESS,INTRO,SNS,PROFILE_IMG) values(?,?,?,?,?,?,?,?,?,?,?)";
 		try {
 			pstmt = con.prepareStatement(sql);
-	
 			pstmt.setString(1, mBean.getId());
 			pstmt.setString(2, mBean.getPw());
 			pstmt.setString(3, mBean.getName());
-			pstmt.setString(4, mBean.getGender());
+			pstmt.setString(4, "default");
 			pstmt.setString(5, mBean.getEmail());
 			pstmt.setString(6, mBean.getBirth());
-			pstmt.setString(7, mBean.getPhone());
-			pstmt.setString(8, mBean.getAddress());
-			pstmt.setString(9, mBean.getIntro());
-			pstmt.setString(10, mBean.getSns());
-			pstmt.setString(11, mBean.getProfileImg());
+			pstmt.setString(7, "default");
+			pstmt.setString(8, "default");
+			pstmt.setString(9, "default");
+			pstmt.setString(10, "default");
+			pstmt.setString(11, "default");
 			result = pstmt.executeUpdate();
-			System.out.println(result);
+			System.out.println("개놈아"+result);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
