@@ -18,6 +18,13 @@ create table city(
 	references member(id) on delete cascade 
 );
 
+create view book_city as
+select
+from book b,city c
+
+
+
+
 select * from book;
 drop table city;
 
