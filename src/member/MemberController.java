@@ -30,8 +30,8 @@ public class MemberController {
 				String[]inputArr2 = input2.split(",");
 				loginCon.setId(inputArr2[0]);
 				loginCon.setPw(inputArr2[1]);
-				String result4 = service.login(loginCon);
-				JOptionPane.showMessageDialog(null, result4);
+				String result = service.login(loginCon);
+				JOptionPane.showMessageDialog(null, result);
 				break;
 			case "3":
 				MemberBean updateCon= new MemberBean();
