@@ -2,15 +2,15 @@
     pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8" />
 	<title>호스팅1</title>
 </head>
+<jsp:include page = "../global/hosT.jsp"/>
 <style type = "text/css">
 #center { position:absolute; top:20%; left:30%; width:400px; height:400px; overflow:hidden;} 
 .button {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50; 
     border: none;
     color: white;
     padding: 16px 32px;
@@ -19,7 +19,7 @@
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     cursor: pointer;
 }

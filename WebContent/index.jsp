@@ -5,7 +5,7 @@
 	<head>
 	<style>
 	body{
-	background-image: url('host.jpg');
+	background-image: url('${img}/host.jpg');
 	background-size : 700px 700px
 	}
 	.button {
@@ -29,7 +29,7 @@
 	
 	<div id = center>
 		
-		<a href="hosting.jsp" class="button" >Start</a>
+		<a href="${context}/hosting.jsp" class="button" >Start</a>
 			
 		</div>
 	</body>

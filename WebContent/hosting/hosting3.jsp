@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
+<jsp:include page = "../global/hosT.jsp"/>
 <head>
 	<meta charset="UTF-8" />
 	<title>호스팅3</title>
