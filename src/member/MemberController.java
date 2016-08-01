@@ -9,7 +9,7 @@ public class MemberController {
 			switch (JOptionPane.showInputDialog("1회원가입 2로그인")) {
 			case "1":
 				MemberBean m = new MemberBean();
-				String input = JOptionPane.showInputDialog("ID,PW,NAME,GENDER,EMAIL,BIRTH,PHONE,ADDRESS,INTRO,SSN,PROFILEIMG");
+				String input = JOptionPane.showInputDialog("ID,PW,NAME,GENDER,EMAIL,BIRTH,PHONE,ADDRESS,INTRO,SNS,PROFILEIMG");
 				String[]inputArr = input.split(",");
 				m.setId(inputArr[0]);
 				m.setPw(inputArr[1]);
@@ -22,8 +22,8 @@ public class MemberController {
 				m.setIntro(inputArr[8]);
 				m.setSns(inputArr[9]);
 				m.setProfileImg(inputArr[10]);
-				String result = service.regist(m);
-				JOptionPane.showMessageDialog(null, result);
+				service.regist(m);
+				
 				break;
 			case "0":
 				return;

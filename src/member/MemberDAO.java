@@ -28,24 +28,25 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 	}
-	public int resist(MemberBean mBean){
+	public int regist(MemberBean mBean){
 		int result = 0;
-		String sql = "insert into member(ID,PW,NAME,GENDER,EMAIL,BIRTH,PHONE,ADDRESS,INTRO,SNS,"
-				+ "PROFILE_IMG) values(?,?,?,?,?,?,?,?,?,?,?)";
+		String sql = "insert into member(ID,PW,NAME,GENDER,EMAIL,BIRTH,PHONE,ADDRESS,INTRO,SNS,PROFILE_IMG) values(?,?,?,?,?,?,?,?,?,?,?);";
 		try {
 			pstmt = con.prepareStatement(sql);
+	
 			pstmt.setString(1, mBean.getId());
 			pstmt.setString(2, mBean.getPw());
 			pstmt.setString(3, mBean.getName());
-			pstmt.setString(5, mBean.getGender());
-			pstmt.setString(6, mBean.getEmail());
-			pstmt.setString(7, mBean.getBirth());
-			pstmt.setString(8, mBean.getPhone());
-			pstmt.setString(9, mBean.getAddress());
-			pstmt.setString(10, mBean.getIntro());
-			pstmt.setString(11, mBean.getSns());
-			pstmt.setString(12, mBean.getProfileImg());
+			pstmt.setString(4, mBean.getGender());
+			pstmt.setString(5, mBean.getEmail());
+			pstmt.setString(6, mBean.getBirth());
+			pstmt.setString(7, mBean.getPhone());
+			pstmt.setString(8, mBean.getAddress());
+			pstmt.setString(9, mBean.getIntro());
+			pstmt.setString(10, mBean.getSns());
+			pstmt.setString(11, mBean.getProfileImg());
 			result = pstmt.executeUpdate();
+			System.out.println(result);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -115,6 +116,9 @@ public class MemberDAO {
 			System.out.println("===DAO=== 수정 실패");	
 		}
 		return result;
+	}
+	public void delete(MemberBean member) {
+		
 	}
 
 }
