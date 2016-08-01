@@ -77,7 +77,7 @@ public class CityDAO {
 		}
 	}
 	public void delete(CityBean bean) {
-		String sql = "delete from city where pw = ?";
+		String sql = "delete member where id = ? and pw = ? ";
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, bean.getId());
