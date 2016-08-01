@@ -24,55 +24,42 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public String login(MemberBean member) {
-		/*
-		 * MemberBean mBean = new MemberBean();
-		 */ // 2.로그인
-		/*
-		 * if (dao.login(member)) { session = dao.findById(mBean.getId());
-		 * mBean.setId(session.getId()); mBean.setPw(session.getPw());
-		 * mBean.setName(session.getName());
-		 * mBean.setGender(session.getGender());
-		 * mBean.setEmail(session.getEmail());
-		 * mBean.setBirth(session.getBirth());
-		 * mBean.setPhone(session.getPhone());
-		 * mBean.setAddress(session.getAddress());
-		 * mBean.setIntro(session.getIntro()); mBean.setSns(session.getSns());
-		 * mBean.setProfileImg(session.getProfileImg()); } else {
-		 * session.setId("fail"); } System.out.println("서비스로그인결과?" +
-		 * session.getId());
-		 */
+	public String login(MemberBean mBean) {
+		 MemberBean mem = new MemberBean();
+		  // 2.로그인
+		 if (dao.login(mBean)) { session = dao.findById(mBean.getId());
+		 mBean.setId(session.getId()); mBean.setPw(session.getPw());
+		 mBean.setName(session.getName());
+		 mBean.setGender(session.getGender());
+		 mBean.setEmail(session.getEmail());
+		 mBean.setBirth(session.getBirth());
+		 mBean.setPhone(session.getPhone());
+		 mBean.setAddress(session.getAddress());
+		 mBean.setIntro(session.getIntro()); mBean.setSns(session.getSns());
+		 mBean.setProfileImg(session.getProfileImg()); } else {
+		 session.setId("fail"); } System.out.println("서비스로그인결과?" +
+		 session.getId());
+		 
 		return null;
 	}
 
 	@Override
 	public MemberBean findById(String findID) {
-		/* return dao.findById(); */
 		return dao.findById(findID);
 	}
 
 	@Override
-	public void update(MemberBean mem) {
-		int result = dao.update(mem);
+	public void update(MemberBean mBean) {
+		int result = dao.update(mBean);
 		if (result == 1) {
-			System.out.println("==임플==수정 성공");
-		} else {
-			System.out.println("==임플==수정 실패");
-		}
+			session = this.findById(mBean.getId());
+		} 
 	}
-
 	@Override
-	public void delete(MemberBean member) {
-		dao.delete(member);
-	}
-
-@Override
-public void logout(MemberBean member) {
-	if (member.getId().equals(session.getId()) 
-			&& member.getPw().equals(session.getPw())) {
-		session = null;
-	}
-	
-}
+	public void delete(MemberBean mBean) {
+		if (dao.delete(mBean) == 1) {
+				session = null;
+			}
+		} 
 }
 

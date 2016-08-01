@@ -117,8 +117,26 @@ public class MemberDAO {
 		}
 		return result;
 	}
-	public void delete(MemberBean member) {
-		
+		public int delete(MemberBean mBean) {
+			String sql = "delete from member where id=? and pw = ?";
+			int result = 0;
+			try {
+				pstmt=con.prepareStatement(sql);
+				pstmt.setString(1, mBean.getId());
+				pstmt.setString(2, mBean.getPw());
+				result = pstmt.executeUpdate();
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			if (result == 1) {
+				System.out.println("성공");
+			} else {
+				System.out.println("실패");
+			}
+			return result;
+		}
+
 	}
 
 }
