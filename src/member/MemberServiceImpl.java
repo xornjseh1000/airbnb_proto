@@ -25,21 +25,26 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public String login(MemberBean mBean) {
-		 MemberBean mem = new MemberBean();
-		  // 2.로그인
-		 if (dao.login(mBean)) { session = dao.findById(mBean.getId());
-		 mBean.setId(session.getId()); mBean.setPw(session.getPw());
-		 mBean.setName(session.getName());
-		 mBean.setGender(session.getGender());
-		 mBean.setEmail(session.getEmail());
-		 mBean.setBirth(session.getBirth());
-		 mBean.setPhone(session.getPhone());
-		 mBean.setAddress(session.getAddress());
-		 mBean.setIntro(session.getIntro()); mBean.setSns(session.getSns());
-		 mBean.setProfileImg(session.getProfileImg()); } else {
-		 session.setId("fail"); } System.out.println("서비스로그인결과?" +
-		 session.getId());
-		 
+		MemberBean mem = new MemberBean();
+		// 2.로그인
+		if (dao.login(mBean)) {
+			session = dao.findById(mBean.getId());
+			mBean.setId(session.getId());
+			mBean.setPw(session.getPw());
+			mBean.setName(session.getName());
+			mBean.setGender(session.getGender());
+			mBean.setEmail(session.getEmail());
+			mBean.setBirth(session.getBirth());
+			mBean.setPhone(session.getPhone());
+			mBean.setAddress(session.getAddress());
+			mBean.setIntro(session.getIntro());
+			mBean.setSns(session.getSns());
+			mBean.setProfileImg(session.getProfileImg());
+		} else {
+			session.setId("fail");
+		}
+		System.out.println("서비스 로그인 결과 출력" + session.getId());
+
 		return null;
 	}
 
@@ -53,13 +58,21 @@ public class MemberServiceImpl implements MemberService {
 		int result = dao.update(mBean);
 		if (result == 1) {
 			session = this.findById(mBean.getId());
-		} 
+			System.out.println("수정된 비밀번호 : "+ session.getPw());
+		}
 	}
+
 	@Override
 	public void delete(MemberBean mBean) {
 		if (dao.delete(mBean) == 1) {
-				session = null;
-			}
-		} 
+			session = null;
+		}
+	}
+	
+	@Override
+	public void logOut(MemberBean mBean) {
+		if(mBean.getId().equals(session.getId()) && mBean.getPw().equals(session.getPw())){
+			this.session = null;
+		}  
+	}
 }
-

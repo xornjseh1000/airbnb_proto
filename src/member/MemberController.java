@@ -6,7 +6,7 @@ public class MemberController {
 	public static void main(String[] args) {
 		MemberService service = MemberServiceImpl.getInstance();
 		while (true) {
-			switch (JOptionPane.showInputDialog("1회원가입 2로그인 3수정 4탈퇴")) {
+			switch (JOptionPane.showInputDialog("1회원가입 2로그인 3수정 4탈퇴 5로그아웃 0종료")) {
 			case "1":
 				MemberBean m = new MemberBean();
 				String input = JOptionPane.showInputDialog("ID,PW,NAME,GENDER,EMAIL,BIRTH,PHONE,ADDRESS,INTRO,SNS,PROFILEIMG");
@@ -33,7 +33,7 @@ public class MemberController {
 				String result = service.login(loginCon);
 				JOptionPane.showMessageDialog(null, result);
 				break;
-			case "3":
+			case "3": // 수정 우선 비밀번호만..
 				MemberBean updateCon= new MemberBean();
 				String input3 = JOptionPane.showInputDialog("ID,PW");
 				String[]inputArr3 = input3.split(",");
@@ -49,6 +49,12 @@ public class MemberController {
 				deleteCon.setPw(inputArr4[1]);
 				service.delete(deleteCon);
 				break;
+			case "5" :
+				MemberBean logOutCon = new MemberBean();
+				service.logOut(logOutCon);
+				JOptionPane.showMessageDialog(null, "로그아웃 합니다");
+				break;
+				
 			case "0":
 				return;
 			default:

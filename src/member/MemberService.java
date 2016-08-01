@@ -5,6 +5,6 @@ public interface MemberService {
 	public String login(MemberBean mBean);
 	public void update(MemberBean mBean);
 	public void delete(MemberBean mBean);
+	public void logOut(MemberBean mBean);
 	MemberBean findById(String findID);
-	void logout(MemberBean member);
 }
