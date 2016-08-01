@@ -92,3 +92,5 @@ public class MemberBean {
 		this.profileImg = profileImg;
 	}
 }
+
+
