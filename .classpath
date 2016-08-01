@@ -17,6 +17,5 @@
 	<classpathentry exported="true" kind="lib" path="C:/eclipse/jstl.jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/eclipse/servlet-api.jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/eclipse/standard.jar"/>
-	<classpathentry exported="true" kind="lib" path="WebContent/lib/ojdbc6.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -30,7 +30,7 @@ public class MemberDAO {
 	}
 	public int regist(MemberBean mBean){
 		int result = 0;
-		String sql = "insert into member(ID,PW,NAME,GENDER,EMAIL,BIRTH,PHONE,ADDRESS,INTRO,SNS,PROFILE_IMG) values(?,?,?,?,?,?,?,?,?,?,?);";
+		String sql = "insert into member(ID,PW,NAME,GENDER,EMAIL,BIRTH,PHONE,ADDRESS,INTRO,SNS,PROFILE_IMG) values(?,?,?,?,?,?,?,?,?,?,?)";
 		try {
 			pstmt = con.prepareStatement(sql);
 	

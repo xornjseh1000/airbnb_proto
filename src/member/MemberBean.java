@@ -91,7 +91,4 @@ public class MemberBean {
 	public void setProfileImg(String profileImg) {
 		this.profileImg = profileImg;
 	}
-
-	
-	
 }
