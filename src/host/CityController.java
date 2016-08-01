@@ -9,7 +9,6 @@ public class CityController {
 	while (true) {
 		switch (JOptionPane.showInputDialog("1.등록 2.수정 3.삭제 4.위치 5.리뷰")) {
 		case "1":
-			String result = "";
 			String foo = JOptionPane.showInputDialog("주소,설명,리뷰,가격,옵션,상세주소,시설여부,환불정책,집 유형,언어,사진,방갯수,화장실갯수,침대갯수,ID 입력");
 			String[] fooArr = foo.split(",");
 			bean.setAddress(fooArr[0]);
@@ -28,8 +27,6 @@ public class CityController {
 			bean.setBed(Integer.parseInt(fooArr[13]));
 			bean.setId(fooArr[14]);
 			service.regist(bean);
-			JOptionPane.showMessageDialog(null, result);
-			System.out.println("결과값:"+result);
 			break;
 		case "2":
 			String ba = JOptionPane.showInputDialog("수정할 주소,설명,리뷰,가격,옵션,상세주소,시설여부,환불정책,집 유형,언어,사진,방갯수,화장실갯수,침대갯수,ID 입력");

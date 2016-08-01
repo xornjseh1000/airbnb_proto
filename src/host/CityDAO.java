@@ -29,7 +29,7 @@ public class CityDAO {
 		return instance;
 	}
 	public void insert(CityBean bean) {
-		String sql = "insert into city(address,explain,review,price,option2,local2,facilities,policy,house_type,language,photo,room,toilet,bed,id) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		String sql = "insert into city(seq,address,explain,review,price,option2,local2,facilities,policy,house_type,language,photo,room,toilet,bed,id) values(seq.nextval,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, bean.getAddress());

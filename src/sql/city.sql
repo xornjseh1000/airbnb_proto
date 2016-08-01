@@ -24,7 +24,7 @@ from book b,city c
 
 
 
-
+select * from CITY;
 select * from book;
 drop table city;
 
