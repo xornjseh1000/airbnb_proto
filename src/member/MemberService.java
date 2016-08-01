@@ -1,9 +1,8 @@
 package member;
+
 public interface MemberService {
-	
-	public String regist(MemberBean mBean);
-	public String login(MemberBean mBean);
-	public void update(MemberBean mBean);
-	public void delete(MemberBean mBean);
-	MemberBean findById(String findID);
+	public MemberBean regist(MemberBean bean);
+	public MemberBean login(MemberBean bean);
+	public void update(MemberBean bean);
+	public void delete(MemberBean bean);		
 }
