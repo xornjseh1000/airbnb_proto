@@ -8,6 +8,7 @@
 	<title>호스팅1</title>
 </head>
 <style type = "text/css">
+#center { position:absolute; top:20%; left:30%; width:400px; height:400px; overflow:hidden;} 
 .button {
     background-color: #4CAF50; /* Green */
     border: none;
@@ -34,13 +35,14 @@
 }
 </style>
 <body>
-	<span class = "meta"><h1>어떤 유형의 숙소인가요?</h1></span>	<br /><br />
+	<div id = center>
+	<span class = "meta"><h1>어떤 유형의 숙소인가요?</h1></span>	<br /><br /><br /><br />
 	<input type="radio" name = "rooms" value = "all"/> 집 전체 <br /><br />
 	<input type="radio" name = "rooms" value = "single"/> 개인실 <br /><br />
-	<input type="radio" name = "rooms" value = "multi"/> 다인실 <br /><br /><br />
+	<input type="radio" name = "rooms" value = "multi"/> 다인실 <br /><br /><br /><br />
 	
 	<a href="index.jsp"><button class="button button2">이전</button></a>
 	<a href="hosting2.jsp"><button class="button button2">다음</button></a>
-	
+	</div>
 </body>
 </html>

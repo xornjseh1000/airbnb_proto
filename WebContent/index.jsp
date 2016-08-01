@@ -20,15 +20,15 @@
     margin: 4px 2px;
     cursor: pointer;
 }
+#center { position:absolute; top:70%; left:50%; width:400px; height:400px; overflow:hidden; 
 	</style>
 		<meta charset="UTF-8" />
 		<title>호스팅 등록시작하기!!!</title>
 	</head>
 	<body>
 	
-	<div>
-	
-		<h1>호스팅 시작하기!!!</h1>
+	<div id = center>
+		
 		<a href="hosting.jsp" class="button" >Start</a>
 			
 		</div>
