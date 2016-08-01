@@ -22,3 +22,5 @@ m.id
 from member m, book b
 where m.id = b.id;
 
+
+select * from city;

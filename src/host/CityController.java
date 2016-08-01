@@ -50,8 +50,11 @@ public class CityController {
 			JOptionPane.showMessageDialog(null, "수정완료");
 			break;
 		case "3":
-			JOptionPane.showInputDialog("삭제?");
-			service.delete(bean);
+			CityBean bean3 = new CityBean();
+			String temp = JOptionPane.showInputDialog("삭제?");
+			String[] arr = temp.split(",");
+			bean3.setId(arr[0]);
+			service.delete(bean3);
 			break;
 		case "4":break;
 		case "5":

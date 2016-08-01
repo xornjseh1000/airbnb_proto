@@ -1,9 +1,9 @@
 package community;
 
 public interface CommunityService {
-	public CommunityMemberBean regist(CommunityMemberBean bean);
-	public CommunityBean update(CommunityBean bean);
-	public CommunityBean delete(CommunityBean bean);
+	public void regist(CommunityMemberBean bean);
+	public void update(CommunityBean bean);
+	public void delete(CommunityBean bean);
 	
 	
 }

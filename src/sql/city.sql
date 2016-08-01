@@ -24,11 +24,12 @@ from book b,city c
 
 
 
-select * from CITY;
+select * from city;
 select * from book;
 drop table city;
 
 insert into city(
+seq,
 address,
 explain,
 review,
@@ -44,7 +45,9 @@ room,
 toilet,
 bed,
 id) 
-values('서울시,중랑구,신내동,중앙하이츠아파트,2동,1511호',
+values(
+'1',
+'서울시,중랑구,신내동,중앙하이츠아파트,2동,1511호',
 '우리동네',
 'default',
 '500000',
