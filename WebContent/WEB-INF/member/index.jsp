@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
-	<title>Document</title>
+	<title>Documennt</title>
 </head>
 <body>
 	<a href="<%=ctx %>/global/main.jsp"> 로그인 하러 가기 </a>
