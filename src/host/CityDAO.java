@@ -104,11 +104,11 @@ public class CityDAO {
 				bean.setExplain(rs.getString("EXPLAIN"));
 				bean.setReview(rs.getString("REViEW"));
 				bean.setPrice(rs.getString("PRICE"));
-				bean.setOption(rs.getString("OPTION"));
-				bean.setLocal(rs.getString("LOCAL"));
+				bean.setOption(rs.getString("OPTION2"));
+				bean.setLocal(rs.getString("LOCAL2"));
 				bean.setFacilities(rs.getString("FACILITIES"));
 				bean.setPolicy(rs.getString("POLICY"));
-				bean.setHouseType(rs.getString("HOUSETYPE"));
+				bean.setHouseType(rs.getString("HOUSE_TYPE"));
 				bean.setLanguage(rs.getString("LANGUAGE"));
 				bean.setPhoto(rs.getString("PHOTO"));
 				bean.setRoom(rs.getInt("ROOM"));
