@@ -31,18 +31,19 @@ public class CityDAO {
 	public void insert(CityBean bean) {
 		String sql = "insert into city(seq,address,explain,review,price,option2,local2,facilities,policy,house_type,language,photo,room,toilet,bed,id) values(seq.nextval,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		try {
+			System.out.println(bean);
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, bean.getAddress());
 			pstmt.setString(2, bean.getExplain());
-			pstmt.setString(3, bean.getReview());
-			pstmt.setString(4, bean.getPrice());
-			pstmt.setString(5, bean.getOption());
-			pstmt.setString(6, bean.getLocal());
-			pstmt.setString(7, bean.getFacilities());
-			pstmt.setString(8, bean.getPolicy());
+			pstmt.setString(3, "default");
+			pstmt.setString(4, "default");
+			pstmt.setString(5, "default");
+			pstmt.setString(6, "default");
+			pstmt.setString(7, "default");
+			pstmt.setString(8, "default");
 			pstmt.setString(9, bean.getHouseType());
-			pstmt.setString(10, bean.getLanguage());
-			pstmt.setString(11, bean.getPhoto());
+			pstmt.setString(10, "default");
+			pstmt.setString(11, "default");
 			pstmt.setInt(12, bean.getRoom());
 			pstmt.setInt(13, bean.getToilet());
 			pstmt.setInt(14, bean.getBed());

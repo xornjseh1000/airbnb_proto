@@ -26,8 +26,7 @@ public class MemberController extends HttpServlet {
 			bean.setPw(request.getParameter("pw"));
 			bean.setName(request.getParameter("name"));
 			bean.setEmail(request.getParameter("email"));
-			bean.setBirth(request.getParameter("birth"));
-			
+			bean.setBirth(request.getParameter("year")+","+request.getParameter("month")+","+request.getParameter("day"));
 			if (service.regist(bean) == "") {
 				Separator.command.setPage("regist");
 				Separator.command.setView();
@@ -44,7 +43,7 @@ public class MemberController extends HttpServlet {
 				Separator.command.setPage("login");
 				Separator.command.setView();
 			}else{
-				Separator.command.setPage("null");
+				Separator.command.setPage("main");
 				Separator.command.setView();
 			}
 			break;

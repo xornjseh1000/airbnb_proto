@@ -5,11 +5,20 @@ import java.io.Serializable;
 public class CityBean implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
-	private int room,toilet,bed;
+	private int room,toilet,bed,count;
 	private String address,explain,review,price,option,local,facilities,policy,houseType,language,photo,id,pw;
 	public int getRoom() {
 		return room;
 	}
+	
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
 	public void setRoom(int room) {
 		this.room = room;
 	}

@@ -1,5 +1,13 @@
+create sequence seq
+increment by 1
+start with 1000
+nocycle;
+
+drop sequence seq; 
+
 create table city(
-	address varchar2(100) constraint city_pk primary key,
+	seq number constraint city_pk primary key,
+	address varchar2(100),
 	explain varchar2(1000),
 	review varchar2(500),
 	price varchar2(50),

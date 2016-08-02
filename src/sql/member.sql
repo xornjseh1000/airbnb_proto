@@ -13,7 +13,7 @@ create table member(
 );
 
 
-delete from member where id ='kim';
+delete from member where id ='you';
 select * from member;
 
 insert into member(id,pw,name,gender,email,birth,phone,address,intro,sns,profile_img) 
