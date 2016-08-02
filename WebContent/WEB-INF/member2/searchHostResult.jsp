@@ -4,38 +4,7 @@
 <html>
 <head>
 <script
-src="http://maps.googleapis.com/maps/api/js">
-</script>
-
-<script>
-var myCenter=new google.maps.LatLng(51.508742,-0.120850);
-
-function initialize()
-{
-var mapProp = {
-  center:myCenter,
-  zoom:5,
-  mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-
-var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-var marker=new google.maps.Marker({
-  position:myCenter,
-  });
-
-marker.setMap(map);
-
-var infowindow = new google.maps.InfoWindow({
-  content:"Hello World!"
-  });
-
-infowindow.open(map,marker);
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
-
+script src="https://maps.googleapis.com/maps/api/js"></script>
 
 <style>
 .flex-container {
@@ -84,22 +53,45 @@ footer {background: #aaa;color:white;}
 </header>
 
 <nav class="nav">
-<ul>
-  <li><a href="#">London</a></li>
-  <li><a href="#">Paris</a></li>
-  <li><a href="#">Tokyo</a></li>
-</ul>
+<div class="container">
+    <label><b>날    짜:</b></label>
+    <input size="5" align="right" type="text" placeholder="체크인" name="checkin" required>
+    <input size="5" align="right" type="text" placeholder="체크아웃" name="checkout" required>
+    <input size="5" align="right" type="text" placeholder="숙박인원명수" name="numbder" required>
+    <br>
+    <label><b>숙소유형:</b></label>
+    집전체 <input size="5" align="right" type="checkbox" name="host_type" >
+    개인실 <input size="5" align="right" type="checkbox" name="host_type" >
+    다인실 <input size="5" align="right" type="checkbox" name="host_type" >
+    
+    <br>
+
+    <label><b>가격범위:</b></label>
+    <input size="6" align="right" type="text" placeholder="최저가격" name="price_low" required>
+    <input size="6" align="right" type="text" placeholder="최고가격" name="price_high" required><br>
+    
+    
+    <br><br>
+<img alt="" src="seoul.jpg" style="width:200px;height:200px;">   
+<img alt="" src="busan.jpg" style="width:200px;height:200px;">  <br> 
+<b href="book.jsp ">서울 호스팅 예약하기 &nbsp; &nbsp; &nbsp; &nbsp;</b>
+<b href="book.jsp ">부산 호스팅 예약하기</b><br>
+<img alt="" src="london.jpg" style="width:200px;height:200px;">   
+<img alt="" src="swiss.jpg" style="width:200px;height:200px;">  <br>
+<b href="book.jsp ">런던 호스팅 예약하기 &nbsp; &nbsp; &nbsp; &nbsp;</b>
+<b href="book.jsp ">스위스 호스팅 예약하기</b><br> 
+
+  </div>
 </nav>
 
 <article class="article">
-  <h2>서울특별시 검색 결과</h2>
-  
-<head>
-
-</head>
+  <h2>서울특별시 검색 결과</h2><br>
+  <img src="map.jpg" alt=""  />
 
 
-<div id="googleMap" style="width:500px;height:380px;"></div>
+
+
+</body>
 
 
 
