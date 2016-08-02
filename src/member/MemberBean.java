@@ -4,7 +4,8 @@ public class MemberBean {
 
 	private String id, pw, name, gender, email, birth, phone, address, intro, sns, profileImg;
 
-	public MemberBean(String id, String pw, String name, String ssn) {
+	public MemberBean(String id, String pw, String name, String ssn, String gender, String email,
+			String birth, String phone, String address, String intro, String sns, String profileImg) {
 		this.id = id;
 		this.pw = pw;
 		this.name = name;

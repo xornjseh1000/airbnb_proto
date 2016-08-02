@@ -6,7 +6,7 @@ insert into member(id,pw,name,gender,email,birth,phone,address,intro,sns,profile
 <!-- address, intro, sns는 차후 update문에서 사용할 예정으로 초기값 default로 set profile_img 초기값 default.jpg로 set -->
 
 <!-- 수정 -->
-update member set pw=?, email=?, phone=?, address=?, intro=?; 
+update member set pw=?, email=?, phone=?, address=?, intro=? where id = ?; 
 
 <!-- 탈퇴 -->
 delete from member where id =? and pw=?;

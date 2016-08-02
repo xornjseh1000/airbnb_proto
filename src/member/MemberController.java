@@ -7,7 +7,7 @@ public class MemberController {
 		MemberService service = MemberServiceImpl.getInstance();
 		while (true) {
 			switch (JOptionPane.showInputDialog("1회원가입 2로그인 3수정 4탈퇴 5로그아웃 0종료")) {
-			case "1":
+			case "1": // 가입 완료
 				MemberBean m = new MemberBean();
 				String input = JOptionPane.showInputDialog("ID,PW,NAME,GENDER,EMAIL,BIRTH,PHONE,ADDRESS,INTRO,SNS,PROFILEIMG");
 				String[]inputArr = input.split(",");
@@ -24,7 +24,7 @@ public class MemberController {
 				m.setProfileImg(inputArr[10]);
 				service.regist(m);
 				break;
-			case "2":
+			case "2": // 로그인 완료
 				MemberBean loginCon = new MemberBean();
 				String input2 = JOptionPane.showInputDialog("ID,PW");
 				String[]inputArr2 = input2.split(",");
@@ -33,15 +33,18 @@ public class MemberController {
 				String result = service.login(loginCon);
 				JOptionPane.showMessageDialog(null, result);
 				break;
-			case "3": // 수정 우선 비밀번호만..
-				MemberBean updateCon= new MemberBean();
-				String input3 = JOptionPane.showInputDialog("ID,PW");
-				String[]inputArr3 = input3.split(",");
-				updateCon.setId(inputArr3[0]);
-				updateCon.setPw(inputArr3[1]);
-				service.update(updateCon);
+			case "3": // 수정 미완
+				MemberBean bean = new MemberBean();
+				 String input3=JOptionPane.showInputDialog("변경할 pw=?, email=?, phone=?, address=?, intro=?");
+				 String[] inputArr3 = input3.split(",");
+				 bean.setPw(inputArr3[0]);
+				 bean.setEmail(inputArr3[1]);
+				 bean.setPhone(inputArr3[2]);
+				 bean.setAddress(inputArr3[3]);
+				 bean.setIntro(inputArr3[4]);
+				 service.update(bean);
 				break;
-			case "4":
+			case "4": // 삭제 (완료)
 				MemberBean deleteCon = new MemberBean();
 				String input4 = JOptionPane.showInputDialog("ID,PW");
 				String[]inputArr4 = input4.split(",");
@@ -49,12 +52,15 @@ public class MemberController {
 				deleteCon.setPw(inputArr4[1]);
 				service.delete(deleteCon);
 				break;
-			case "5" :
+			case "5" : // 로그아웃 (완료)
 				MemberBean logOutCon = new MemberBean();
+				String input5 = JOptionPane.showInputDialog("ID,PW");
+				String[]inputArr5 = input5.split(",");
+				logOutCon.setId(inputArr5[0]);
+				logOutCon.setPw(inputArr5[1]);
 				service.logOut(logOutCon);
 				JOptionPane.showMessageDialog(null, "로그아웃 합니다");
 				break;
-				
 			case "0":
 				return;
 			default:

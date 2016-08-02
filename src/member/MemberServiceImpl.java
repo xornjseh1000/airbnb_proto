@@ -43,7 +43,7 @@ public class MemberServiceImpl implements MemberService {
 		} else {
 			session.setId("fail");
 		}
-		System.out.println("서비스 로그인 결과 출력" + session.getId());
+		System.out.println("로그인된 ID : " + session.getId());
 
 		return null;
 	}
@@ -56,11 +56,16 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public void update(MemberBean mBean) {
 		int result = dao.update(mBean);
+		session = dao.findById(mBean.getId());
 		if (result == 1) {
-			session = this.findById(mBean.getId());
-			System.out.println("수정된 비밀번호 : "+ session.getPw());
+			System.out.println("수정 성공");
+		}else{
+			System.out.println("수정 실패");
 		}
 	}
+	
+
+
 
 	@Override
 	public void delete(MemberBean mBean) {
@@ -72,7 +77,9 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public void logOut(MemberBean mBean) {
 		if(mBean.getId().equals(session.getId()) && mBean.getPw().equals(session.getPw())){
-			this.session = null;
+			session = null;
+			System.out.println("로그아웃 성공");
+		}else{ System.out.println("로그아웃 실패");
 		}  
 	}
 }

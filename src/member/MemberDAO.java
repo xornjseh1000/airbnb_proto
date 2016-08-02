@@ -30,7 +30,7 @@ public class MemberDAO {
 	}
 	public int regist(MemberBean mBean){
 		int result = 0;
-		String sql = "insert into member(ID,PW,NAME,GENDER,EMAIL,BIRTH,PHONE,ADDRESS,INTRO,SNS,PROFILE_IMG) values(?,?,?,?,?,?,?,?,?,?,?);";
+		String sql = "insert into member(ID,PW,NAME,GENDER,EMAIL,BIRTH,PHONE,ADDRESS,INTRO,SNS,PROFILE_IMG) values(?,?,?,?,?,?,?,?,?,?,?)";
 		try {
 			pstmt = con.prepareStatement(sql);
 	
@@ -92,10 +92,9 @@ public class MemberDAO {
 		System.out.println("===DAO=== 로그인 체크 : "+loginCheck);
 		return loginCheck;
 }
-
+	
 	public int update(MemberBean mBean){
-		String sql = "update mBeanber set pw = ? , email = ?, phone = ?, address = ?, intro =?,"
-				+ "sns = ?, profile_img = ?, where id = ?";
+		String sql = "update member set pw=?, email=?, phone=?, address=?, intro=? where id = ?";
 		int result = 0;
 		try {
 			pstmt = con.prepareStatement(sql);
@@ -104,9 +103,8 @@ public class MemberDAO {
 			pstmt.setString(3, mBean.getPhone());
 			pstmt.setString(4, mBean.getAddress());
 			pstmt.setString(5, mBean.getIntro());
-			pstmt.setString(6, mBean.getSns());
-			pstmt.setString(7, mBean.getProfileImg());
-			result = pstmt.executeUpdate();
+			pstmt.setString(6, mBean.getId());
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -117,6 +115,7 @@ public class MemberDAO {
 		}
 		return result;
 	}
+	
 		public int delete(MemberBean mBean) {
 			String sql = "delete from member where id=? and pw = ?";
 			int result = 0;
