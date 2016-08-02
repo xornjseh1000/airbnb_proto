@@ -1,11 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>호스팅2</title>
-</head>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <style>
 .button {
     background-color: #4CAF50; /* Green */
@@ -31,14 +24,12 @@
     background-color: #008CBA;
     color: white;
 }
-div{   height: 200px;
-    width: 60%;
-    background-color: powderblue;
-}
-#center { position:absolute; top:10%; left:30%; width:500px; height:700px; overflow:hidden; }
+
+#center { position:absolute; top:10%; left:30%; width:500px; height:700px; overflow:hidden; background-color: powerblue;}
 </style>
-<body>
-	<div id = center>
+<jsp:include page="/WEB-INF/global/top.jsp" />
+<jsp:include page="/WEB-INF/global/nav.jsp" />
+	<div id = "center">
 		<h1>호스팅 상태를 등록해주세요</h1>
 		<form action="${context}/host.do" method="post">
 	<span class="meta">이용가능한 침실갯수를 입력해주세요</span><br /> <input type="text" name="room" /><br />
@@ -55,7 +46,5 @@ div{   height: 200px;
 	<input type="submit" class="button button2" value="등록">
 	</form>
 	<a href="hosting.jsp"><button class="button button2">이전</button></a>
-	
 	</div>
-</body>
-</html>
+<jsp:include page="/WEB-INF/global/end.jsp"/>

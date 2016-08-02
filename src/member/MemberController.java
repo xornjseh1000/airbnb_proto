@@ -47,8 +47,20 @@ public class MemberController extends HttpServlet {
 				Separator.command.setView();
 			}
 			break;
+		case "update":
+			bean.setPw(request.getParameter("pw"));
+			bean.setEmail(request.getParameter("email"));
+			bean.setPhone(request.getParameter("phone"));
+			bean.setAddress(request.getParameter("address"));
+			bean.setIntro(request.getParameter("intro"));
+			service.update(bean);
+			break;
+		case "delete":
+			bean.setId(session.getId());
+			bean.setPw(request.getParameter("pw"));
+			service.delete(bean);
+			break;
 		}
-		
 		DispatcherServlet.send(request, response, Separator.command);
 	}
 }

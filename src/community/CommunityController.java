@@ -7,35 +7,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class CommunityController
- */
-@WebServlet("/CommunityController")
+import global.DispatcherServlet;
+import global.Separator;
+
+@WebServlet("/community.do")
 public class CommunityController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public CommunityController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Separator.init(request, response);
+		switch (Separator.command.getAction()) {
+		case "regist":			
+			break;
+		case "update":
+			break;
+		case "delete":
+			break;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		}
+		DispatcherServlet.send(request, response, Separator.command);
 	}
 
 }

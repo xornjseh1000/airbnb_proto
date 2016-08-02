@@ -38,9 +38,11 @@ public class CityController extends HttpServlet {
 			Separator.command.setDirectory("member");
 			Separator.command.setPage("login");
 			break;
-
-		default:
+		case "update":
 			break;
+		case "delete":
+			break;
+		
 		}
 		
 		DispatcherServlet.send(request, response, Separator.command);

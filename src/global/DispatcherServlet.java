@@ -11,5 +11,8 @@ public class DispatcherServlet {
 	System.out.println("이동할 페이지 : " + command.getView());
 		request.getRequestDispatcher(command.getView()).forward(request,response);	
 	}
+	public static void send2(HttpServletRequest request, HttpServletResponse response, Command command) throws ServletException, IOException{
+			request.getRequestDispatcher(command.getView2()).forward(request,response);	
+		}
 
 }

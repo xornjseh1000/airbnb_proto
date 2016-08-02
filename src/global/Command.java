@@ -40,6 +40,10 @@ public class Command implements Orderable{
 		System.out.println("getview : " +view);
 		return view;
 	}
+	public String getView2(){
+		this.view=this.page+".jsp";
+		return view;
+	}
 	public void setView() {
 		this.view = "/WEB-INF/"+this.directory+"/"+this.page+".jsp";
 	}

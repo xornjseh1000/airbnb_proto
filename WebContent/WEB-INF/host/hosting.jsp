@@ -1,12 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!doctype html>
-<html lang="en">
-
-<head>
-	<meta charset="UTF-8" />
-	<title>호스팅1</title>
-</head>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <style type = "text/css">
 #center { position:absolute; top:20%; left:30%; width:400px; height:400px; overflow:hidden;} 
 .button {
@@ -34,7 +26,8 @@
     color: white;
 }
 </style>
-<body>
+<jsp:include page="/WEB-INF/global/top.jsp" />
+<jsp:include page="/WEB-INF/global/nav.jsp" />
 	<div id = center>
 	<span class = "meta"><h1>어떤 유형의 숙소인가요?</h1></span>	<br /><br /><br /><br />
 	<form action="${context}/host.do" method="post">
@@ -47,5 +40,4 @@
 	</form>
 	<a href="${context}/host.do?page=host"><button class="button button2">이전</button></a>
 	</div>
-</body>
-</html>
+<jsp:include page="/WEB-INF/global/end.jsp"/>

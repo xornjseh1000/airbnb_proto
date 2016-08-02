@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<html>
 <style>
-body { margin-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; }
-#center { position:absolute; top:50%; left:50%; width:380px; height:600px; overflow:hidden; 
+#joincenter { position:absolute; top:50%; left:50%; width:380px; height:600px; overflow:hidden; 
  margin-top:-300px; margin-left:-150px;}
 form {
     border: 3px solid #f1f1f1;
@@ -52,18 +50,11 @@ span.psw {
     float: right;
     padding-top: 10px;
 }
-@media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 400px;
-    }
-}
+body { margin-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; }
 </style>
-<body>
-<div id="center">
+<jsp:include page="/WEB-INF/global/top.jsp" />
+<jsp:include page="/WEB-INF/global/nav.jsp" />
+<div id="joincenter">
 <h2>회원 가입 </h2>
 <form action="${context}/member.do" method="post">
   <div class="container">
@@ -90,9 +81,7 @@ span.psw {
 
   <div class="container" style="background-color:#f1f1f1">
   <button type="button" class="cancelbtn"><a href="${context}/member.do?page=login">Login</button>
-   
   </div>
 </form>
 </div>
-</body>
-</html>
+<jsp:include page="/WEB-INF/global/end.jsp"/>

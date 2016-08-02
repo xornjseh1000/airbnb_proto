@@ -1,16 +1,26 @@
 package guide;
 
-import javax.swing.JOptionPane;
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-public class GuideController {
-	public static void main(String[] args) {
-	while (true) {
-		switch (JOptionPane.showInputDialog("1.검색하기")) {
-		case "1":break;
+import global.DispatcherServlet;
+import global.Separator;
 
-		default:
+@WebServlet("/guide.do")
+public class GuideController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Separator.init(request, response);
+		switch (Separator.command.getAction()) {
+		case "search":			
 			break;
 		}
+		DispatcherServlet.send(request, response, Separator.command);
 	}
-}
+
 }
