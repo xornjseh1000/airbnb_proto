@@ -10,5 +10,6 @@ public interface CityService {
 	public Map<?,?>map();
 	public void review(CityBean bean);
 	public CityBean session();
-	public List<?> findByRoom(String keyword);
+	public List<?> list();
+	public List<?> findByRoom(String keyword);//xx으로 검색기능 만들어봄
 }

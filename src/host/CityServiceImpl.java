@@ -59,8 +59,11 @@ public class CityServiceImpl implements CityService{
 	
 	@Override
 	public List<?> findByRoom(String keyword) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.findBySeq(keyword);
+	}
+	@Override
+	public List<?> list() {
+		return dao.list();
 	}
 
 

@@ -1,13 +1,17 @@
 package host;
 
+import java.util.List;
+
 import javax.swing.JOptionPane;
+
+import jdk.nashorn.internal.scripts.JO;
 
 public class CityController {
 	public static void main(String[] args) {
 		CityService service = CityServiceImpl.getInstance();
 		CityBean bean = new CityBean();
 	while (true) {
-		switch (JOptionPane.showInputDialog("1.등록 2.수정 3.삭제 4.위치 5.리뷰")) {
+		switch (JOptionPane.showInputDialog("1.등록 2.수정 3.삭제 4.ID로 검색 5.리스트")) {
 		case "1":
 			String foo = JOptionPane.showInputDialog("주소,설명,리뷰,가격,옵션,상세주소,시설여부,환불정책,집 유형,언어,사진,방갯수,화장실갯수,침대갯수,인원수,ID 입력");
 			String[] fooArr = foo.split(",");
@@ -56,9 +60,12 @@ public class CityController {
 			bean.setId(temp);
 			service.delete(bean);
 			break;
-		case "4":break;
+		case "4":
+			List<?> list = service.findByRoom(JOptionPane.showInputDialog("조회하려는 시퀀스?"));
+			JOptionPane.showMessageDialog(null, (list.isEmpty())?"검색한 시퀀스가 없음":list.toString());
+			break;
 		case "5":
-			
+			JOptionPane.showMessageDialog(null, service.list().toString());
 			break;
 
 		default:

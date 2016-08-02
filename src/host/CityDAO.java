@@ -4,7 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import global.Constants;
 
@@ -87,6 +90,70 @@ public class CityDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	public List<CityBean> findBySeq(String keyword) {
+		String sql = "";
+		List<CityBean> list = new ArrayList<CityBean>();
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, keyword);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				CityBean bean = new CityBean();
+				bean.setAddress(rs.getString("ADDRESS"));
+				bean.setExplain(rs.getString("EXPLAIN"));
+				bean.setReview(rs.getString("REViEW"));
+				bean.setPrice(rs.getString("PRICE"));
+				bean.setOption(rs.getString("OPTION"));
+				bean.setLocal(rs.getString("LOCAL"));
+				bean.setFacilities(rs.getString("FACILITIES"));
+				bean.setPolicy(rs.getString("POLICY"));
+				bean.setHouseType(rs.getString("HOUSETYPE"));
+				bean.setLanguage(rs.getString("LANGUAGE"));
+				bean.setPhoto(rs.getString("PHOTO"));
+				bean.setRoom(rs.getInt("ROOM"));
+				bean.setToilet(rs.getInt("TOILET"));
+				bean.setBed(rs.getInt("BED"));
+				bean.setCount(rs.getInt("COUNT"));
+				bean.setId(rs.getString("ID"));
+				list.add(bean);
+		}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+	public List<CityBean> list() {
+		String sql = "select * from city";
+		List<CityBean> list = new ArrayList<CityBean>();
+		try {
+			stmt = con.createStatement();
+			rs = stmt.executeQuery(sql);
+			while (rs.next()) {
+				CityBean b = new CityBean();
+				b.setAddress(rs.getString("ADDRESS"));
+				b.setExplain(rs.getString("EXPLAIN"));
+				b.setReview(rs.getString("REViEW"));
+				b.setPrice(rs.getString("PRICE"));
+				b.setOption(rs.getString("OPTION2"));
+				b.setLocal(rs.getString("LOCAL2"));
+				b.setFacilities(rs.getString("FACILITIES"));
+				b.setPolicy(rs.getString("POLICY"));
+				b.setHouseType(rs.getString("HOUSE_TYPE"));
+				b.setLanguage(rs.getString("LANGUAGE"));
+				b.setPhoto(rs.getString("PHOTO"));
+				b.setRoom(rs.getInt("ROOM"));
+				b.setToilet(rs.getInt("TOILET"));
+				b.setBed(rs.getInt("BED"));
+				b.setCount(rs.getInt("COUNT"));
+				b.setId(rs.getString("ID"));
+				list.add(b);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
 	}
 
 }
