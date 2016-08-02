@@ -111,11 +111,12 @@ public class CityBean implements Serializable{
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
+
 	@Override
 	public String toString() {
-		return "CityBean [room=" + room + ", toilet=" + toilet + ", bed=" + bed + ", address=" + address + ", explain="
-				+ explain + ", review=" + review + ", price=" + price + ", option=" + option + ", local=" + local
-				+ ", facilities=" + facilities + ", policy=" + policy + ", houseType=" + houseType + ", language="
-				+ language + ", photo=" + photo + ", id=" + id + ", pw=" + pw + "]";
+		return "CityBean [room=" + room + ", toilet=" + toilet + ", bed=" + bed + ", count=" + count + ", address="
+				+ address + ", explain=" + explain + ", review=" + review + ", price=" + price + ", option=" + option
+				+ ", local=" + local + ", facilities=" + facilities + ", policy=" + policy + ", houseType=" + houseType
+				+ ", language=" + language + ", photo=" + photo + ", id=" + id + ", pw=" + pw + "]";
 	}
 }

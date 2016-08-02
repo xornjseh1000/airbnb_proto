@@ -15,7 +15,6 @@ public class GlobalController extends HttpServlet {
   
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Separator.init(request, response);
-
 		DispatcherServlet.send2(request, response, Separator.command);
 	}
 }

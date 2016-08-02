@@ -2,7 +2,24 @@ package member;
 
 public class MemberBean {
 	private String id,pw,name,gender,email,birth,phone,address,
-	intro,sns,profileImg;
+	intro,sns,profileImg,msgLogout,msgUpdate;
+
+	
+	public String getMsgLogout() {
+		return msgLogout;
+	}
+
+	public void setMsgLogout(String msgLogout) {
+		this.msgLogout = msgLogout;
+	}
+
+	public String getMsgUpdate() {
+		return msgUpdate;
+	}
+
+	public void setMsgUpdate(String msgUpdate) {
+		this.msgUpdate = msgUpdate;
+	}
 
 	public String getId() {
 		return id;

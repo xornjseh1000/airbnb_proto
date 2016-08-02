@@ -12,8 +12,8 @@ create table member(
 	profile_img varchar2(20)
 );
 
-
-delete from member where id ='you';
+update member set pw = '1' , email = '1', phone = '1', address = '1', intro = '1' where id = 'hong';
+delete from member where id ='5';
 select * from member;
 
 insert into member(id,pw,name,gender,email,birth,phone,address,intro,sns,profile_img) 

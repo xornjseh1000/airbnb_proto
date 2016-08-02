@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <style>
-#logincenter { position:absolute; top:50%; left:50%; width:400px; height:500px; overflow:hidden; 
- margin-top:-150px; margin-left:-150px;}
+#logincenter { position:absolute; top:50%; left:50%; width:50%; height:50%; overflow:hidden; 
+ margin-top:-220px; margin-left:-150px;}
 form {
     border: 3px solid #f1f1f1;
     width: 350px;
@@ -52,9 +52,9 @@ span.psw {
 }
 </style>
 <jsp:include page="/WEB-INF/global/top.jsp" />
-<jsp:include page="/WEB-INF/global/nav.jsp" />
+<jsp:include page="/WEB-INF/global/nav.jsp" /><br><br><br>
 <div id="logincenter">
-<h2>Login </h2>
+<h2>Login</h2>
 <form action="${context}/member.do" method="post">
   <div id="container">
     <label><b>Username</b></label>
@@ -62,10 +62,10 @@ span.psw {
     <label><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="pw" required><br>     
     <input type="hidden" name="action" value="login">
-    <input type="submit" value="로그인"><br>
+   <button type="submit">Login </button>
   </div>
   <div id="container" style="background-color:#f1f1f1">
-  <button type="button" class="cancelbtn"><a href="regist.jsp ">회원가입</button>
+  <button type="button" class="cancelbtn"><a href="${context}/member.do?page=regist">Create an Account</button>
   </div>
 </form>
 </div>

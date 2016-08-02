@@ -2,7 +2,7 @@
 <style type = "text/css">
 #center { position:absolute; top:20%; left:30%; width:400px; height:400px; overflow:hidden;} 
 .button {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50; 
     border: none;
     color: white;
     padding: 16px 32px;
@@ -11,7 +11,7 @@
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     cursor: pointer;
 }
@@ -36,8 +36,7 @@
 	<input type="radio" name = "housetype" value = "multi"/> 다인실 <br /><br /><br /><br />
 	<input type="hidden" name="action" value="regist">
 	<input type="hidden" name="page" value="hosting2">
-	<input type="submit" value="다음">
+	<button type="submit" button class="button button2">다음</button>
 	</form>
-	<a href="${context}/host.do?page=host"><button class="button button2">이전</button></a>
 	</div>
 <jsp:include page="/WEB-INF/global/end.jsp"/>

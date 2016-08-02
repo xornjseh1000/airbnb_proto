@@ -8,4 +8,6 @@ public interface MemberService {
 	public void delete(MemberBean mBean);
 	MemberBean findById(String findID);
 	public void logout(MemberBean member);
+	public MemberBean getSession();
+	public void logoutSession(MemberBean member);
 }

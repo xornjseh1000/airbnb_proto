@@ -2,8 +2,8 @@ package member;
 
 public class MemberServiceImpl implements MemberService {
 
-	MemberDAO dao = MemberDAO.getInstance();
-	MemberBean session;
+	private MemberDAO dao = MemberDAO.getInstance();
+	private MemberBean session;
 	private static MemberServiceImpl instance = new MemberServiceImpl();
 
 	public static MemberServiceImpl getInstance() {
@@ -14,8 +14,14 @@ public class MemberServiceImpl implements MemberService {
 		session = new MemberBean();
 	}
 
-	private MemberBean getSession() {
+	public MemberBean getSession() {
 		return session;
+	}
+	
+	public void logoutSession(MemberBean member) {
+		if (member.getId().equals(session.getId()) && member.getPw().equals(session.getPw())) {
+			session = null;
+		}
 	}
 
 	@Override
@@ -39,18 +45,12 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public MemberBean findById(String findID) {
-		/* return dao.findById(); */
 		return dao.findById(findID);
 	}
 
 	@Override
 	public void update(MemberBean mem) {
-		int result = dao.update(mem);
-		if (result == 1) {
-			System.out.println("==임플==수정 성공");
-		} else {
-			System.out.println("==임플==수정 실패");
-		}
+		dao.update(mem);
 	}
 
 	@Override

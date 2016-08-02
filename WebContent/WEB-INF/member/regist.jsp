@@ -55,28 +55,27 @@ body { margin-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px;
 <jsp:include page="/WEB-INF/global/top.jsp" />
 <jsp:include page="/WEB-INF/global/nav.jsp" />
 <div id="joincenter">
-<h2>회원 가입 </h2>
+<h2>Sign up</h2>
 <form action="${context}/member.do" method="post">
   <div class="container">
    <label><b>ID</b></label><br>
     <input type="text" placeholder="Enter ID" name="id" required><br>
   
-    <label><b>Username</b></label>
+    <label><b>Username</b></label><br>
     <input type="text" placeholder="Enter Username" name="name" required><br>
 
     <label><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="pw" required><br>
-     <label><b>Email</b></label>
+     <label><b>E-mail</b></label>
     <input type="text" placeholder="email" name="email" required><br>
 
-    <label><b>생년월일</b></label>
+    <label><b>Birth</b></label>
     <input type="text" placeholder="year" name="year" required>
     <input type="text" placeholder="month" name="month" required>
     <input type="text" placeholder="day" name="day" required>
     <br>
   	<input type="hidden" name="action" value="regist">
-    <input type="submit" value="회원가입"><br>
-   
+    <button type="submit" onclick="alert">Create an Account</button>
   </div>
 
   <div class="container" style="background-color:#f1f1f1">

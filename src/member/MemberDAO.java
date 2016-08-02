@@ -45,7 +45,6 @@ public class MemberDAO {
 			pstmt.setString(10, "default");
 			pstmt.setString(11, "default");
 			result = pstmt.executeUpdate();
-			System.out.println("개놈아"+result);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -82,42 +81,44 @@ public class MemberDAO {
 	
 	public boolean login(MemberBean mBean) {
 		boolean loginCheck= false;
-		if(mBean.getId()!=null && mBean.getPw()!=null){
+		if(mBean.getId()!=null && mBean.getPw()!=null && this.findById(mBean.getId())!=null){
 			MemberBean member = this.findById(mBean.getId());
 			if(member.getPw().equals(mBean.getPw())){
 				loginCheck = true;
 			}
 		}
-		System.out.println("===DAO=== 로그인 체크 : "+loginCheck);
 		return loginCheck;
 }
 
 	public int update(MemberBean mBean){
-		String sql = "update mBeanber set pw = ? , email = ?, phone = ?, address = ?, intro =?,"
-				+ "sns = ?, profile_img = ?, where id = ?";
+		String sql = "update member set pw = ? , email = ?, phone = ?, address = ?, intro = ? where id = ?";
 		int result = 0;
 		try {
+			System.out.println(mBean);
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, mBean.getPw());
 			pstmt.setString(2, mBean.getEmail());
 			pstmt.setString(3, mBean.getPhone());
 			pstmt.setString(4, mBean.getAddress());
 			pstmt.setString(5, mBean.getIntro());
-			pstmt.setString(6, mBean.getSns());
-			pstmt.setString(7, mBean.getProfileImg());
+			pstmt.setString(6, mBean.getId());
 			result = pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		if (result==1) {
-			System.out.println("===DAO=== 수정 성공");
-		} else {
-			System.out.println("===DAO=== 수정 실패");	
-		}
 		return result;
 	}
+	
+	
 	public void delete(MemberBean member) {
-		
+		String sql = "delete from member where id=? and pw = ?";
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, member.getId());
+			pstmt.setString(2, member.getPw());
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
-
 }

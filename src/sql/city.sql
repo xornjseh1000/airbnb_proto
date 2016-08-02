@@ -30,12 +30,10 @@ create view book_city as
 select
 from book b,city c
 
-
-
-select * from CITY;
+select * from city;
 select * from book;
 drop table city;
-
+  
 insert into city(
 address,
 explain,

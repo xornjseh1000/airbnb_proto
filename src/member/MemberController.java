@@ -38,28 +38,59 @@ public class MemberController extends HttpServlet {
 		case "login":
 			bean.setId(request.getParameter("id"));
 			bean.setPw(request.getParameter("pw"));
+			bean.setMsgLogout("로그아웃");
+			bean.setMsgUpdate("정보수정");
 			service.login(bean);
 			if (bean.getId().equals("fail")) {
 				Separator.command.setPage("login");
 				Separator.command.setView();
 			}else{
-				Separator.command.setPage("main");
+				Separator.command.setPage("index");
 				Separator.command.setView();
+				session.setAttribute("user", bean);
+				session.setAttribute("logout", bean);
+				DispatcherServlet.send2(request, response, Separator.command);
+				return;
 			}
 			break;
+		case "logout":
+			bean.setId(service.getSession().getId());
+			bean.setPw(service.getSession().getPw());
+			service.logoutSession(bean);
+			Separator.command.setPage("login");
+			Separator.command.setView();
+			session.setAttribute("user", bean);
+			session.setAttribute("logout", bean);
+			break;
 		case "update":
+			bean.setId(service.getSession().getId());
 			bean.setPw(request.getParameter("pw"));
 			bean.setEmail(request.getParameter("email"));
 			bean.setPhone(request.getParameter("phone"));
-			bean.setAddress(request.getParameter("address"));
+			bean.setAddress(request.getParameter("city")+","+request.getParameter("gu")
+			+","+request.getParameter("dong")+","+request.getParameter("bunji"));
 			bean.setIntro(request.getParameter("intro"));
 			service.update(bean);
-			break;
+			Separator.command.setPage("index");
+			Separator.command.setView();
+			DispatcherServlet.send2(request, response, Separator.command);
+			return;
 		case "delete":
-			bean.setId(session.getId());
-			bean.setPw(request.getParameter("pw"));
-			service.delete(bean);
-			break;
+			if (request.getParameter("pw").equals(service.getSession().getPw())) {
+				bean.setId(service.getSession().getId());
+				bean.setPw(request.getParameter("pw"));
+				service.delete(bean);
+				Separator.command.setPage("index");
+				Separator.command.setView();
+				session.setAttribute("user", bean);
+				session.setAttribute("logout", bean);
+				DispatcherServlet.send2(request, response, Separator.command);
+			}else{
+				Separator.command.setPage("update");
+				Separator.command.setView();
+				break;
+			}
+			return;
 		}
 		DispatcherServlet.send(request, response, Separator.command);
 	}
