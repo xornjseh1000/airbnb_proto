@@ -45,5 +45,4 @@
 	<a href="hosting2.jsp"><button class="button button2">다음</button></a>
 	</div>
 </body>
-
 </html>

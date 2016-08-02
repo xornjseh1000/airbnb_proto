@@ -47,5 +47,4 @@ div{   height: 200px;
 		 <input type="submit" class="button button2" ><a href="hosting4.jsp">완료</a>
 		
 </body>
-
 </html>
