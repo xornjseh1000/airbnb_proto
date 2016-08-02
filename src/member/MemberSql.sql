@@ -16,4 +16,4 @@ delete from member where id ='1';
 select * from member where id = ?;
 
 
-delete from member(id,pw,name,gender,email,birth,phone,address,intro,sns,profile_img) values(2,2,2,2,2,2,2,2,2,2,2);
+delete from member(id,pw,name,gender,email,birth,phone,address,intro,sns,profile_img) values(1,1,1,2,2,2,2,2,2,2,2);

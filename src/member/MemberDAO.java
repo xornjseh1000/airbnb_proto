@@ -94,8 +94,8 @@ public class MemberDAO {
 }
 	
 	public int update(MemberBean mBean){
-		String sql = "update member set pw=?, email=?, phone=?, address=?, intro=? where id = ?";
 		int result = 0;
+		String sql = "update member set pw=?, email=?, phone=?, address=?, intro=? where id = ?";
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, mBean.getPw());
@@ -104,14 +104,10 @@ public class MemberDAO {
 			pstmt.setString(4, mBean.getAddress());
 			pstmt.setString(5, mBean.getIntro());
 			pstmt.setString(6, mBean.getId());
-			
+			pstmt.executeUpdate();
+			result = pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		if (result==1) {
-			System.out.println("===DAO=== 수정 성공");
-		} else {
-			System.out.println("===DAO=== 수정 실패");	
 		}
 		return result;
 	}
@@ -135,6 +131,7 @@ public class MemberDAO {
 			}
 			return result;
 		}
+	
+		}
 
-	}
 

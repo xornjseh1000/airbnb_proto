@@ -54,19 +54,18 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public void update(MemberBean mBean) {
-		int result = dao.update(mBean);
-		session = dao.findById(mBean.getId());
-		if (result == 1) {
-			System.out.println("수정 성공");
+	public String update(MemberBean mBean) {
+		String update = "";
+		if (dao.update(mBean) == 1) {
+			update ="성공";
 		}else{
-			System.out.println("수정 실패");
+			update ="실패";
 		}
+		return update;
 	}
-	
 
 
-
+		
 	@Override
 	public void delete(MemberBean mBean) {
 		if (dao.delete(mBean) == 1) {

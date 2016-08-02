@@ -33,16 +33,17 @@ public class MemberController {
 				String result = service.login(loginCon);
 				JOptionPane.showMessageDialog(null, result);
 				break;
-			case "3": // 수정 미완
-				MemberBean bean = new MemberBean();
-				 String input3=JOptionPane.showInputDialog("변경할 pw=?, email=?, phone=?, address=?, intro=?");
-				 String[] inputArr3 = input3.split(",");
-				 bean.setPw(inputArr3[0]);
-				 bean.setEmail(inputArr3[1]);
-				 bean.setPhone(inputArr3[2]);
-				 bean.setAddress(inputArr3[3]);
-				 bean.setIntro(inputArr3[4]);
-				 service.update(bean);
+			case "3": // 수정 (완료)
+				MemberBean upCon = new MemberBean();
+				String update = JOptionPane.showInputDialog("pw=?, email=?, phone=?, address=?, intro=? where id = ?");
+				String[] update2 = update.split(",");
+				upCon.setId(update2[0]);
+				upCon.setPw(update2[1]);
+				upCon.setEmail(update2[2]);
+				upCon.setPhone(update2[3]);
+				upCon.setAddress(update2[4]);
+				upCon.setIntro(update2[5]);
+				JOptionPane.showMessageDialog(null, service.update(upCon));
 				break;
 			case "4": // 삭제 (완료)
 				MemberBean deleteCon = new MemberBean();
