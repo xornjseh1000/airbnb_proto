@@ -9,7 +9,7 @@ public class CityController {
 	while (true) {
 		switch (JOptionPane.showInputDialog("1.등록 2.수정 3.삭제 4.위치 5.리뷰")) {
 		case "1":
-			String foo = JOptionPane.showInputDialog("주소,설명,리뷰,가격,옵션,상세주소,시설여부,환불정책,집 유형,언어,사진,방갯수,화장실갯수,침대갯수,ID 입력");
+			String foo = JOptionPane.showInputDialog("주소,설명,리뷰,가격,옵션,상세주소,시설여부,환불정책,집 유형,언어,사진,방갯수,화장실갯수,침대갯수,인원수,ID 입력");
 			String[] fooArr = foo.split(",");
 			bean.setAddress(fooArr[0]);
 			bean.setExplain(fooArr[1]);
@@ -25,11 +25,12 @@ public class CityController {
 			bean.setRoom(Integer.parseInt(fooArr[11]));
 			bean.setToilet(Integer.parseInt(fooArr[12]));
 			bean.setBed(Integer.parseInt(fooArr[13]));
-			bean.setId(fooArr[14]);
+			bean.setCount(Integer.parseInt(fooArr[14]));
+			bean.setId(fooArr[15]);
 			service.regist(bean);
 			break;
 		case "2":
-			String ba = JOptionPane.showInputDialog("수정할 주소,설명,리뷰,가격,옵션,상세주소,시설여부,환불정책,집 유형,언어,사진,방갯수,화장실갯수,침대갯수,ID 입력");
+			String ba = JOptionPane.showInputDialog("수정할 주소,설명,리뷰,가격,옵션,상세주소,시설여부,환불정책,집 유형,언어,사진,방갯수,화장실갯수,침대갯수,인원수,ID 입력");
 			String[] baArr = ba.split(",");
 			bean.setAddress(baArr[0]);
 			bean.setExplain(baArr[1]);
@@ -45,16 +46,15 @@ public class CityController {
 			bean.setRoom(Integer.parseInt(baArr[11]));
 			bean.setToilet(Integer.parseInt(baArr[12]));
 			bean.setBed(Integer.parseInt(baArr[13]));
+			bean.setCount(Integer.parseInt(baArr[13]));
 			bean.setId(baArr[14]);
 			service.update(bean);
 			JOptionPane.showMessageDialog(null, "수정완료");
 			break;
 		case "3":
-			CityBean bean3 = new CityBean();
-			String temp = JOptionPane.showInputDialog("삭제?");
-			String[] arr = temp.split(",");
-			bean3.setId(arr[0]);
-			service.delete(bean3);
+			String temp = JOptionPane.showInputDialog("삭제Id?");
+			bean.setId(temp);
+			service.delete(bean);
 			break;
 		case "4":break;
 		case "5":

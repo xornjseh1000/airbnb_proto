@@ -5,13 +5,21 @@ import java.io.Serializable;
 public class CityBean implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
-	private int room,toilet,bed;
+	private int room,toilet,bed,count;
 	private String address,explain,review,price,option,local,facilities,policy,houseType,language,photo,id,pw;
 	public int getRoom() {
 		return room;
 	}
 	public void setRoom(int room) {
 		this.room = room;
+	}
+	
+
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
 	}
 	public int getToilet() {
 		return toilet;
@@ -104,9 +112,10 @@ public class CityBean implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "CityBean [room=" + room + ", toilet=" + toilet + ", bed=" + bed + ", address=" + address + ", explain="
-				+ explain + ", review=" + review + ", price=" + price + ", option=" + option + ", local=" + local
-				+ ", facilities=" + facilities + ", policy=" + policy + ", houseType=" + houseType + ", language="
-				+ language + ", photo=" + photo + ", id=" + id + ", pw=" + pw + "]";
+		return "CityBean [room=" + room + ", toilet=" + toilet + ", bed=" + bed + ", count=" + count + ", address="
+				+ address + ", explain=" + explain + ", review=" + review + ", price=" + price + ", option=" + option
+				+ ", local=" + local + ", facilities=" + facilities + ", policy=" + policy + ", houseType=" + houseType
+				+ ", language=" + language + ", photo=" + photo + ", id=" + id + ", pw=" + pw + "]";
 	}
+
 }

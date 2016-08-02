@@ -14,7 +14,6 @@ private GuideBookServiceImpl() {
 
 @Override
 public void search(GuideBookBean bean) {
-	// TODO Auto-generated method stub
 	
 }
 }

@@ -1,5 +1,6 @@
 package host;
 
+import java.util.List;
 import java.util.Map;
 
 public class CityServiceImpl implements CityService{
@@ -55,5 +56,12 @@ public class CityServiceImpl implements CityService{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	@Override
+	public List<?> findByRoom(String keyword) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

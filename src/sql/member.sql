@@ -16,3 +16,5 @@ select * from member;
 
 insert into member(id,pw,name,gender,email,birth,phone,address,intro,sns,profile_img) 
 values('hong','1','홍길동','남','hong@test.com','1989,02,22','010-7143-0222','default','default','default','default.jpg');
+insert into member(id,pw,name,gender,email,birth,phone,address,intro,sns,profile_img) 
+values('song','1','송지효','여','song@test.com','1989,02,22','010-7143-0222','default','default','default','default.jpg');

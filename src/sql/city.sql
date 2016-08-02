@@ -13,6 +13,7 @@ create table city(
 	room number,
 	toilet number,
 	bed number,
+	count number,
 	id varchar2(20),
 	constraint city_member_fk foreign key (id)
 	references member(id) on delete cascade 
@@ -29,7 +30,6 @@ select * from book;
 drop table city;
 
 insert into city(
-seq,
 address,
 explain,
 review,
@@ -44,9 +44,9 @@ photo,
 room,
 toilet,
 bed,
+count,
 id) 
 values(
-'1',
 '서울시,중랑구,신내동,중앙하이츠아파트,2동,1511호',
 '우리동네',
 'default',
@@ -61,8 +61,9 @@ values(
 '1',
 '2',
 '2',
+'5',
 'hong');
 
-
+alter table city add count number; 
 
 

@@ -13,20 +13,17 @@ private CommunityServiceImpl() {
 }
 
 @Override
-public void regist(CommunityMemberBean bean) {
-	// TODO Auto-generated method stub
-	
+public void regist(CommunityBean bean) {
+	dao.insert(bean);
 }
 
 @Override
 public void update(CommunityBean bean) {
-	// TODO Auto-generated method stub
-	
+	dao.update(bean);
 }
 
 @Override
 public void delete(CommunityBean bean) {
-	// TODO Auto-generated method stub
-	
+	dao.delete(bean);
 }
 }

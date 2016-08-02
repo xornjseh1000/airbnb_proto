@@ -1,11 +1,10 @@
 package host;
 
-import java.beans.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.Statement;
 
 import global.Constants;
 
@@ -29,7 +28,7 @@ public class CityDAO {
 		return instance;
 	}
 	public void insert(CityBean bean) {
-		String sql = "insert into city(seq,address,explain,review,price,option2,local2,facilities,policy,house_type,language,photo,room,toilet,bed,id) values(seq.nextval,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		String sql = "insert into city(address,explain,review,price,option2,local2,facilities,policy,house_type,language,photo,room,toilet,bed,count,id) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, bean.getAddress());
@@ -46,14 +45,15 @@ public class CityDAO {
 			pstmt.setInt(12, bean.getRoom());
 			pstmt.setInt(13, bean.getToilet());
 			pstmt.setInt(14, bean.getBed());
-			pstmt.setString(15, bean.getId());;
+			pstmt.setInt(15, bean.getCount());
+			pstmt.setString(16, bean.getId());
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	public void update(CityBean bean) {
-		String sql = "update city set address=?, explain=?, review=?, price=?, option2=?, local2=?, facilities=?, policy=?, house_type=?, language=?, photo=?, room=?, toilet=?, bed=? where id=?";
+		String sql = "update city set address=?, explain=?, review=?, price=?, option2=?, local2=?, facilities=?, policy=?, house_type=?, language=?, photo=?, room=?, toilet=?, bed=?, count=? where id=?";
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, bean.getAddress());
@@ -70,6 +70,7 @@ public class CityDAO {
 			pstmt.setInt(12, bean.getRoom());
 			pstmt.setInt(13, bean.getToilet());
 			pstmt.setInt(14, bean.getBed());
+			pstmt.setInt(14, bean.getCount());
 			pstmt.setString(15, bean.getId());
 			pstmt.executeUpdate();
 		} catch (Exception e) {
@@ -87,5 +88,5 @@ public class CityDAO {
 			e.printStackTrace();
 		}
 	}
-	
+
 }
