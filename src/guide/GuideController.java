@@ -17,7 +17,7 @@ public class GuideController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Separator.init(request, response);
 		switch (Separator.command.getAction()) {
-		case "search":			
+		case "guide":		
 			break;
 		}
 		DispatcherServlet.send(request, response, Separator.command);

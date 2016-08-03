@@ -69,4 +69,5 @@ span.psw {
   </div>
 </form>
 </div>
+<jsp:include page="/WEB-INF/global/footer.jsp"/>
 <jsp:include page="/WEB-INF/global/end.jsp"/>

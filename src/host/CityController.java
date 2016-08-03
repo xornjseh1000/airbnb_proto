@@ -12,6 +12,8 @@ import javax.servlet.http.HttpSession;
 import global.DispatcherServlet;
 import global.ParamMap;
 import global.Separator;
+import member.MemberService;
+import member.MemberServiceImpl;
 
 @WebServlet("/host.do")
 public class CityController extends HttpServlet {
@@ -21,8 +23,22 @@ public class CityController extends HttpServlet {
 		HttpSession session = request.getSession();
 		CityBean bean2 = new CityBean();
 		CityService service = CityServiceImpl.getInstance();
+		MemberService memberService = MemberServiceImpl.getInstance();
 		switch (Separator.command.getAction()) {
+		case "temp":
+			if (memberService.getSession() != null) {
+				System.out.println("2");
+				Separator.command.setPage("hosting");
+				Separator.command.setView();
+			}else{
+				System.out.println("1");
+				Separator.command.setDirectory("member");
+				Separator.command.setPage("login");
+				Separator.command.setView();
+			}
+			break;
 		case "regist":
+			bean2.setId(memberService.getSession().getId());
 			bean2.setHouseType(request.getParameter("housetype"));
 			session.setAttribute("regBean", bean2);
 			System.out.println("첫번째 regist : "+bean2);
@@ -36,18 +52,24 @@ public class CityController extends HttpServlet {
 			bean2.setFacilities(ParamMap.getValues(request, "facilities"));
 			bean2.setExplain(request.getParameter("explain"));
 			System.out.println("두번째 regist : "+bean2);
-			service.regist(bean2);
-			Separator.command.setDirectory("member");
-			Separator.command.setPage("login");
-			session.removeAttribute("regBean");
 			break;
+		case "regist3":
+			bean2 = (CityBean) session.getAttribute("regBean");
+			bean2.setAddress(request.getParameter("address1")+","+request.getParameter("address2")+","+request.getParameter("address3")+","+request.getParameter("address4"));
+			System.out.println("세번째 regist : "+bean2);
+			service.regist(bean2);
+			Separator.command.setPage("index");
+			Separator.command.setView();
+			DispatcherServlet.send2(request, response, Separator.command);
+			session.removeAttribute("regBean");
+			return;
 		case "update":
 			break;
 		case "delete":
 			break;
 		
 		}
-		/*bean.setAddress(request.getParameter("address1")+","+request.getParameter("address2")+","+request.getParameter("address3")+","+request.getParameter("address4"));*/
+		
 		DispatcherServlet.send(request, response, Separator.command);
 	}
 

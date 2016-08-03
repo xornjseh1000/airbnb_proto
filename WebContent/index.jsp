@@ -11,4 +11,6 @@
 		<input type="submit" value="검색">
 	</div>
 </form>
+<jsp:include page="/WEB-INF/global/guide.jsp"/>
+<jsp:include page="/WEB-INF/global/footer.jsp"/>
 <jsp:include page="/WEB-INF/global/end.jsp"/>

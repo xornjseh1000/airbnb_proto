@@ -29,7 +29,7 @@ public class CityDAO {
 		return instance;
 	}
 	public void insert(CityBean bean) {
-		String sql = "insert into city(seq,address,explain,review,price,option2,local2,facilities,policy,house_type,language,photo,room,toilet,bed,id) values(seq.nextval,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		String sql = "insert into city_member(seq,address,explain,review,price,option2,local2,facilities,policy,house_type,language,photo,room,toilet,bed,count,id) values(seq.nextval,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		try {
 			System.out.println(bean);
 			pstmt = con.prepareStatement(sql);
@@ -39,7 +39,7 @@ public class CityDAO {
 			pstmt.setString(4, "default");
 			pstmt.setString(5, "default");
 			pstmt.setString(6, "default");
-			pstmt.setString(7, "default");
+			pstmt.setString(7, bean.getFacilities());
 			pstmt.setString(8, "default");
 			pstmt.setString(9, bean.getHouseType());
 			pstmt.setString(10, "default");
@@ -47,7 +47,8 @@ public class CityDAO {
 			pstmt.setInt(12, bean.getRoom());
 			pstmt.setInt(13, bean.getToilet());
 			pstmt.setInt(14, bean.getBed());
-			pstmt.setString(15, bean.getId());;
+			pstmt.setInt(15, bean.getCount());
+			pstmt.setString(16, bean.getId());
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

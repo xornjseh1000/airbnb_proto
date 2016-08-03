@@ -83,4 +83,5 @@ body { margin-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px;
   </div>
 </form>
 </div>
+<jsp:include page="/WEB-INF/global/footer.jsp"/>
 <jsp:include page="/WEB-INF/global/end.jsp"/>

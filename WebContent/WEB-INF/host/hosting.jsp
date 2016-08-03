@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <style type = "text/css">
-#center { position:absolute; top:20%; left:30%; width:400px; height:400px; overflow:hidden;} 
+#center { position:absolute; top:15%; left:40%; width:400px; height:400px; overflow:hidden;} 
 .button {
     background-color: #4CAF50; 
     border: none;
@@ -29,7 +29,7 @@
 <jsp:include page="/WEB-INF/global/top.jsp" />
 <jsp:include page="/WEB-INF/global/nav.jsp" />
 	<div id = center>
-	<span class = "meta"><h1>어떤 유형의 숙소인가요?</h1></span>	<br /><br /><br /><br />
+	<span class = "meta"><h1>어떤 유형의 숙소인가요?</h1></span>	<br/>
 	<form action="${context}/host.do" method="post">
 	<input type="radio" name = "housetype" value = "all"/> 집 전체 <br /><br />
 	<input type="radio" name = "housetype" value = "single"/> 개인실 <br /><br />

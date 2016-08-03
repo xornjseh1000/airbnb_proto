@@ -21,6 +21,7 @@ create table city(
 	room number,
 	toilet number,
 	bed number,
+	count number,
 	id varchar2(20),
 	constraint city_member_fk foreign key (id)
 	references member(id) on delete cascade 
@@ -69,3 +70,42 @@ values('서울시,중랑구,신내동,중앙하이츠아파트,2동,1511호',
 
 
 
+
+==================
+
+
+create view city_member as
+select
+	c.seq,
+	c.address,
+	c.explain,
+	c.review,
+	c.price,
+	c.option2,
+	c.local2,
+	c.facilities,
+	c.policy,
+	c.house_type,
+	c.language,
+	c.photo,
+	c.room,
+	c.toilet,
+	c.bed,
+	c.count,
+	m.id
+from member m, city c
+where m.id = c.id;
+
+select * from city_member;
+
+create view wishlist as
+select 
+b.address,
+b.check_in,
+b.check_out,
+b.count,
+m.id
+from member m, book b
+where m.id = b.id;
+
+delete from city_member where id ='hong';

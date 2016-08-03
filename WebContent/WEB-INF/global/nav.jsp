@@ -7,7 +7,7 @@
   <li style="float:right"><a href="${context}/member.do?page=login">로그인</a></li>
     <li style="float:right"><a href="${context}/member.do?page=regist">회원가입</a></li>
     <li style="float:right"><a href="${context}/guide.do">도움말</a></li>
-    <li style="float:right"><a href="${context}/host.do?page=hosting">호스팅하기</a></li>
+    <li style="float:right"><a href="${context}/host.do?action=temp">호스팅하기</a></li>
     
    
 </ul>
