@@ -8,10 +8,15 @@ create table book(
 	references member(id) on delete cascade
 );
 
+insert into book(ADDRESS,CHECK_IN,CHECK_OUT,COUNT,ID) 
+ values('1','2','3','4','hong');
+ 
+insert into member(id,pw,name,gender,email,birth,phone,address,intro,sns,profile_img) 
+values('hong','1','홍길동','남','hong@test.com','1989,02,22','010-7143-0222','default','default','default','default.jpg');
+
+select * from book;
+
 drop view wishlist;
-
-select * from wishlist;
-
 create view wishlist as
 select 
 b.address,

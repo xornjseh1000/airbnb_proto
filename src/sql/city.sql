@@ -19,6 +19,7 @@ create table city(
 );
 
 select * from book;
+select * from city;
 drop table city;
 
 insert into city(

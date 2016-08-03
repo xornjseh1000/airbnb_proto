@@ -6,9 +6,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import book.BookBean;
 import global.Constants;
+import host.CityBean;
 
 public class MemberDAO {
+	
+
 	Connection con;
 	Statement stmt;
 	PreparedStatement pstmt;
@@ -28,30 +32,30 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 	}
-	public int regist(MemberBean mBean){
-		int result = 0;
-		String sql = "insert into member(ID,PW,NAME,GENDER,EMAIL,BIRTH,PHONE,ADDRESS,INTRO,SNS,PROFILE_IMG) values(?,?,?,?,?,?,?,?,?,?,?)";
-		try {
-			pstmt = con.prepareStatement(sql);
-	
-			pstmt.setString(1, mBean.getId());
-			pstmt.setString(2, mBean.getPw());
-			pstmt.setString(3, mBean.getName());
-			pstmt.setString(4, mBean.getGender());
-			pstmt.setString(5, mBean.getEmail());
-			pstmt.setString(6, mBean.getBirth());
-			pstmt.setString(7, mBean.getPhone());
-			pstmt.setString(8, mBean.getAddress());
-			pstmt.setString(9, mBean.getIntro());
-			pstmt.setString(10, mBean.getSns());
-			pstmt.setString(11, mBean.getProfileImg());
-			result = pstmt.executeUpdate();
-			System.out.println(result);
-		} catch (Exception e) {
-			e.printStackTrace();
+		public int regist(MemberBean mBean){
+			int result = 0;
+			String sql = "insert into member(ID,PW,NAME,GENDER,EMAIL,BIRTH,PHONE,ADDRESS,INTRO,SNS,PROFILE_IMG) values(?,?,?,?,?,?,?,?,?,?,?)";
+			try {
+				pstmt = con.prepareStatement(sql);
+		
+				pstmt.setString(1, mBean.getId());
+				pstmt.setString(2, mBean.getPw());
+				pstmt.setString(3, mBean.getName());
+				pstmt.setString(4, mBean.getGender());
+				pstmt.setString(5, mBean.getEmail());
+				pstmt.setString(6, mBean.getBirth());
+				pstmt.setString(7, mBean.getPhone());
+				pstmt.setString(8, mBean.getAddress());
+				pstmt.setString(9, mBean.getIntro());
+				pstmt.setString(10, mBean.getSns());
+				pstmt.setString(11, mBean.getProfileImg());
+				result = pstmt.executeUpdate();
+				System.out.println(result);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return result;
 		}
-		return result;
-	}
 
 	
 	public MemberBean findById(String findID) {
@@ -125,9 +129,9 @@ public class MemberDAO {
 				e.printStackTrace();
 			}
 			if (result == 1) {
-				System.out.println("성공");
+				System.out.println("==MemDAO===삭제 성공");
 			} else {
-				System.out.println("실패");
+				System.out.println("==MemDAO===삭제 실패");
 			}
 			return result;
 		}

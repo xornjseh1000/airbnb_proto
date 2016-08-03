@@ -7,4 +7,5 @@ public interface MemberService {
 	public void delete(MemberBean mBean);
 	public void logOut(MemberBean mBean);
 	MemberBean findById(String findID);
+	public MemberBean getSession();
 }

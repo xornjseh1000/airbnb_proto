@@ -1,10 +1,8 @@
 package book;
 
 public interface BookService {
-	public BookBean book(BookBean bean);
-	public BookBean cancel (BookBean bean);
-	public BookBean regist (BookBean bean);
-	public void wishlist (BookCityBean bean);
-	public void wishlistDel (BookCityBean bean);
+	
+	public void book(BookBean bBean);
+	public BookBean cancel (BookBean bBean);
 	public BookCityBean search(BookCityBean bean);
 }

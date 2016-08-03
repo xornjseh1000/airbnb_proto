@@ -4,6 +4,7 @@ public class MemberServiceImpl implements MemberService {
 
 	MemberDAO dao = MemberDAO.getInstance();
 	MemberBean session;
+	
 	private static MemberServiceImpl instance = new MemberServiceImpl();
 
 	public static MemberServiceImpl getInstance() {
@@ -13,10 +14,10 @@ public class MemberServiceImpl implements MemberService {
 	private MemberServiceImpl() {
 		session = new MemberBean();
 	}
-
-	private MemberBean getSession() {
+	public MemberBean getSession() {
 		return session;
 	}
+
 
 	@Override
 	public void regist(MemberBean mBean) {
