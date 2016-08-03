@@ -40,7 +40,7 @@ public class MemberDAO {
 			pstmt.setString(5, mBean.getEmail());
 			pstmt.setString(6, mBean.getBirth());
 			pstmt.setString(7, "default");
-			pstmt.setString(8, "default");
+			pstmt.setString(8, "default,default,default,default");
 			pstmt.setString(9, "default");
 			pstmt.setString(10, "default");
 			pstmt.setString(11, "default");

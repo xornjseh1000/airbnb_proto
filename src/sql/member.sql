@@ -13,7 +13,7 @@ create table member(
 );
 
 update member set pw = '1' , email = '1', phone = '1', address = '1', intro = '1' where id = 'hong';
-delete from member where id ='5';
+delete from member where id ='oh';
 select * from member;
 update member set pw ='1' where id = 'hong';
 
