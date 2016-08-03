@@ -21,6 +21,16 @@ public class BookServiceImpl {
 	public void cancel(BookBean bBean) {
 		dao.cancel(bBean);
 	}
+	
+	public String reigst(BookBean mBean) {
+		String update = "";
+		if (dao.reigst(mBean) == 1) {
+			update ="성공";
+		}else{
+			update ="실패";
+		}
+		return update;
+	}
 
 /*	public void search(BookCityBean bean) {
 		return dao.search();

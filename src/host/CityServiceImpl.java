@@ -7,6 +7,7 @@ public class CityServiceImpl implements CityService{
 	private CityBean session;
 	private static CityServiceImpl instance = new CityServiceImpl();
 	
+	
 	public static CityServiceImpl getInstance() {
 		return instance;
 	}

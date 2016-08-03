@@ -16,7 +16,7 @@ public class BookTestController {
 			case "1":
 				break;
 
-			case "2": // 예약(완료)
+			case "2": // 예약(주소)
 
 				String input2 = JOptionPane.showInputDialog("checkIn, checkOut, count");
 				String[] inputArr2 = input2.split(",");
@@ -26,7 +26,7 @@ public class BookTestController {
 				bService.book(bBean);
 				break;
 
-			case "3": // 취소
+			case "3": // 취소 (id로만 삭제)
 				MemberBean mBean = new MemberBean();
 				BookServiceImpl service = BookServiceImpl.getInstance();
 
@@ -35,8 +35,18 @@ public class BookTestController {
 				mBean.setId(inputArr4[0]);
 				service.cancel(bBean);
 				break;
+				
+			case "4": // 예약정보 변경 (수정) 완료
+				BookBean bookUp = new BookBean();
+				String update = JOptionPane.showInputDialog("수정할 체크인, 체크아웃, 인원수");
+				String[] update2 = update.split(",");
+				bookUp.setCheckIn(update2[0]);
+				bookUp.setCheckOut(update2[1]);
+				bookUp.setCount(Integer.parseInt(update2[2]));
+				JOptionPane.showMessageDialog(null, bService.reigst(bookUp));
+				break;
 
-			case "5": // 로그인 완료
+			case "5": // 로그인 완료 // 세션때문에 임시 컨트롤러에서 가져온 것!
 				MemberBean loginCon = new MemberBean();
 				MemberService mService = MemberServiceImpl.getInstance();
 				String input5 = JOptionPane.showInputDialog("ID,PW");
