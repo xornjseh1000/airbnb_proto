@@ -6,5 +6,6 @@
    <c:set var="memberimg" value="${context}/resources/img/member"/>
    <c:set var="globalimg" value="${context}/resources/img/global"/>
    <c:set var="guideimg" value="${context}/resources/img/guide"/>
+   <c:set var="bookimg" value="${context}/resources/img/book"/>
    <c:set var="css" value="${context}/resources/css"/>
    

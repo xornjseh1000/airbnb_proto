@@ -39,4 +39,5 @@
 	<button type="submit" button class="button button2">다음</button>
 	</form>
 	</div>
+<jsp:include page="/WEB-INF/global/footer.jsp"/>
 <jsp:include page="/WEB-INF/global/end.jsp"/>

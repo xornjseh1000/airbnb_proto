@@ -1,10 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <style>
+
 #p {
-    border: 2px solid black;
-    background:url(${globalimg}/mainbottom.jpg);
-    padding:30px;
+bottom: 0px;
+width: 100%;
+height: 200px;
+background:url(${globalimg}/mainbottom.jpg);
+position: relative;
+ 
 }
+
+#p2 { top:50%; left:50%; width:50%; height:50%; overflow:hidden; 
+ margin-top:-210px; margin-left:-150px;}
+ 
+ 
 a {color : white; font-size: 110%;}
 table {
     border-collapse: collapse;
@@ -15,8 +24,7 @@ th, td {
     text-align: center;
 }
 </style>
-<body>
-	<div id=p>
+	<div id="p">
 	<table style=margin-left:400px>
   <tr>
     <th>회사 이야기</th>
@@ -49,6 +57,4 @@ th, td {
     <td><a href="">즉시예약</a></td>
   </tr>
 </table>
-</div>
-</body>
-</html>
+</div> --%>

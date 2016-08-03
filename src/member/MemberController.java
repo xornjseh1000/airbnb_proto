@@ -9,8 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import book.BookService;
+import book.BookServiceImpl;
 import global.DispatcherServlet;
 import global.Separator;
+import host.CityService;
+import host.CityServiceImpl;
 
 @WebServlet("/member.do")
 public class MemberController extends HttpServlet {
@@ -19,6 +23,8 @@ public class MemberController extends HttpServlet {
 		Separator.init(request, response);
 		HttpSession session = request.getSession();
 		MemberService service = MemberServiceImpl.getInstance();
+		BookService bookservice = BookServiceImpl.getInstance();
+		CityService hostservice = CityServiceImpl.getInstance();
 		MemberBean bean = new MemberBean();
 		switch (Separator.command.getAction()) {
 		case "regist":
@@ -91,6 +97,13 @@ public class MemberController extends HttpServlet {
 				break;
 			}
 			return;
+		case"mybook":
+			request.setAttribute("list", bookservice.list(service.getSession().getId()));
+			System.out.println("아이디 뭐임?? : "+service.getSession().getId());
+			break;
+		case"myhost":
+			request.setAttribute("list", hostservice.myhost(service.getSession().getId()));
+			break;
 		}
 		DispatcherServlet.send(request, response, Separator.command);
 	}

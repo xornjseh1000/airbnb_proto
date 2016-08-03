@@ -1,5 +1,6 @@
 package host;
 
+import java.util.List;
 import java.util.Map;
 
 public class CityServiceImpl implements CityService{
@@ -35,9 +36,15 @@ public class CityServiceImpl implements CityService{
 	@Override
 	public void delete(CityBean bean) {
 		dao.delete(bean);
-		
+	}
+	
+	public List<?> list() {
+		return dao.list();
 	}
 
+	public CityBean detail(String seq) {
+		return dao.findBy(seq);
+	}
 	@Override
 	public Map<?, ?> map() {
 		// TODO Auto-generated method stub
@@ -54,6 +61,11 @@ public class CityServiceImpl implements CityService{
 	public CityBean session() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	@Override
+	public List<?> myhost(String id) {
+		
+		return dao.myhost(id);
 	}
 
 }

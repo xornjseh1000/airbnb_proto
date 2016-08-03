@@ -85,5 +85,5 @@
 	<button type="submit" class="button button2">다음</button>
 	</div>	
 	</form>
-	
+<jsp:include page="/WEB-INF/global/footer.jsp"/>
 <jsp:include page="/WEB-INF/global/end.jsp"/>

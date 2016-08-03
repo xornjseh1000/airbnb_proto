@@ -1,10 +1,13 @@
 package book;
 
+import java.util.List;
+
 public interface BookService {
-	public BookBean book(BookBean bean);
-	public BookBean cancel (BookBean bean);
-	public BookBean regist (BookBean bean);
+	public void book(BookBean bean);
+	public void cancel (BookBean bean);
+	public void regist (BookCityBean bean);
 	public void wishlist (BookCityBean bean);
 	public void wishlistDel (BookCityBean bean);
 	public BookCityBean search(BookCityBean bean);
+	public List<?> list(String id);
 }

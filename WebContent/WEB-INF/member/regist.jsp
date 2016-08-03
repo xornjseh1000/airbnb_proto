@@ -6,7 +6,6 @@ form {
     border: 3px solid #f1f1f1;
     width: 360px;
 }
-
 input[type=text], input[type=password] {
     width: 300px;
     padding: 10px 10px;
@@ -15,7 +14,6 @@ input[type=text], input[type=password] {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
-
 button {
     background-color:#f44336 ;
     color: white;
@@ -25,27 +23,22 @@ button {
     cursor: pointer;
     width: 300px;
 }
-
 .cancelbtn {
     width: 300px;
     padding: 10px 10px;
     background-color: #4CAF50;
 }
-
 .imgcontainer {
     text-align: center;
     margin: 5px 0 5px 0;
 }
-
 img.avatar {
     width: 40%;
     border-radius: 50%;
 }
-
 .container {
     padding: 10px;
 }
-
 span.psw {
     float: right;
     padding-top: 10px;

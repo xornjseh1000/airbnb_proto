@@ -96,8 +96,9 @@ select
 from member m, city c
 where m.id = c.id;
 
+drop view city_member;
 select * from city_member;
-
+select * from city_member where address = '서울시,마포구,상암동,월드컵APT';
 create view wishlist as
 select 
 b.address,

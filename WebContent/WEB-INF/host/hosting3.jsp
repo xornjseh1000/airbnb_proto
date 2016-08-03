@@ -39,4 +39,5 @@
 		 <button type="submit" class="button button2" >완료</button>
 		 </form>
 		 </div>
+<jsp:include page="/WEB-INF/global/footer.jsp"/>
 <jsp:include page="/WEB-INF/global/end.jsp"/>

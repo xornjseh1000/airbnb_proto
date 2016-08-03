@@ -63,6 +63,11 @@ public class CityController extends HttpServlet {
 			DispatcherServlet.send2(request, response, Separator.command);
 			session.removeAttribute("regBean");
 			return;
+		case "list":
+			request.setAttribute("list", service.list());
+			break;
+		case "perlist":
+			break;
 		case "update":
 			break;
 		case "delete":
