@@ -148,7 +148,7 @@ public class CityDAO {
 				bean.setBed(rs.getInt("BED"));
 				bean.setCount(rs.getInt("COUNT"));
 				bean.setId(rs.getString("ID"));
-				temp=bean;
+				temp = bean;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

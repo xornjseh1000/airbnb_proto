@@ -4,10 +4,8 @@
 <img src="${memberimg}/airbnb_main_back.jpg" alt="" style="width: 100%; height: 100%;">
 <form action="${context}/book.do">
 	<div style="text-align:center">
-		<input type="text" placeholder="서울특별시" value=""> 
-		<input type="text" placeholder="체크인일자2000-01-01" value=""> 
-		<input type="text" placeholder="체크아웃일자" value=""> 
-		<input type="text" placeholder="숙박인원-숫자만 입력" value=""> 
+		<input type="text" placeholder="떠나고싶은 도시를 검색해주세요" style="width: 500px" name="search"> 
+		<input type="hidden" name="action" value="search">
 		<input type="hidden" name="page" value="booklist">
 		<input type="submit" value="검색">
 	</div>

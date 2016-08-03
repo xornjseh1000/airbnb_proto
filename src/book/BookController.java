@@ -62,6 +62,12 @@ public class BookController extends HttpServlet {
 			Separator.command.setPage("mypage");
 			Separator.command.setView();
 			break;
+		case "search":
+			String temp = request.getParameter("search");
+			String[] address = temp.split(",");
+			request.setAttribute("list", bookservice.search(address[0]));
+			System.out.println("주소확인 : "+address[0]);
+			break;
 		}
 		DispatcherServlet.send(request, response, Separator.command);
 	}

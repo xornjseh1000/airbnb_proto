@@ -10,8 +10,6 @@ public class BookServiceImpl implements BookService{
 	public BookCityBean getbcSession() {
 		return bcSession;
 	}
-	
-	
 	private static BookServiceImpl instance = new BookServiceImpl();
 	public static BookServiceImpl getInstance() {
 		return instance;
@@ -27,22 +25,6 @@ public class BookServiceImpl implements BookService{
 	public void regist(BookCityBean mBean) {
 		dao.regist(mBean);
 	}
-
-	@Override
-	public void wishlist(BookCityBean bean) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void wishlistDel(BookCityBean bean) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public BookCityBean search(BookCityBean bean) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	@Override
 	public List<?> list(String id) {
 		return dao.list(id);
@@ -51,6 +33,11 @@ public class BookServiceImpl implements BookService{
 	public void delete(String address) {
 		dao.delete(address);
 		
+	}
+	@Override
+	public List<?> search(String address) {
+		System.out.println("impl address : "+address);
+		return dao.search(address);
 	}
 	
 }

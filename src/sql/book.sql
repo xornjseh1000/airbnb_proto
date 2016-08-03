@@ -56,5 +56,18 @@ select
 from member m, book b
 where m.id = b.id;
 
+select * from city_member where address like '서울시%';
+
+
+ SELECT distinct regexp_substr(A.TXT, '[^,]+', 1, LEVEL) TXT
+   FROM (SELECT '서울시,중랑구,신내동,좋은 집' TXT FROM dual) A
+CONNECT BY LEVEL <= length(regexp_replace(A.TXT, '[^|]+',''))+1
+;
+
+select distinct city_member
+
+select id,SUBSTRING(name,0,charindex(',',name))as firstname
+,SUBSTRING(name,charindex(',',name),len(name)+1)as lastname from spilt
+
 delete from book_member where id = 'hong';
 

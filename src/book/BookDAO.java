@@ -169,4 +169,40 @@ public class BookDAO {
 		}
 	}
 	
+	public List<?> search(String address) {
+		String sql = "select * from city_member where address like ?";
+		List<CityBean> list = new ArrayList<CityBean>();
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, address+"%");
+
+			System.out.println("DAO Address2 "+ address);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				CityBean bean = new CityBean();
+				bean.setAddress(rs.getString("ADDRESS"));
+				bean.setExplain(rs.getString("EXPLAIN"));
+				bean.setReview(rs.getString("REViEW"));
+				bean.setPrice(rs.getString("PRICE"));
+				bean.setOption(rs.getString("OPTION2"));
+				bean.setLocal(rs.getString("LOCAL2"));
+				bean.setFacilities(rs.getString("FACILITIES"));
+				bean.setPolicy(rs.getString("POLICY"));
+				bean.setHouseType(rs.getString("HOUSE_TYPE"));
+				bean.setLanguage(rs.getString("LANGUAGE"));
+				bean.setPhoto(rs.getString("PHOTO"));
+				bean.setRoom(rs.getInt("ROOM"));
+				bean.setToilet(rs.getInt("TOILET"));
+				bean.setBed(rs.getInt("BED"));
+				bean.setCount(rs.getInt("COUNT"));
+				bean.setId(rs.getString("ID"));
+				list.add(bean);
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
 }
+}
+
