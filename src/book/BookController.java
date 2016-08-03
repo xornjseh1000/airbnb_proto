@@ -12,6 +12,7 @@ import global.DispatcherServlet;
 import global.Separator;
 import host.CityService;
 import host.CityServiceImpl;
+import member.MemberBean;
 import member.MemberService;
 import member.MemberServiceImpl;
 
@@ -39,23 +40,34 @@ public class BookController extends HttpServlet {
 			System.out.println("find_by 목록 : "+ cityservice.detail(request.getParameter("keyword")));
 			break;
 		case "booking":
-			bean.setId(memberservice.getSession().getId());
-			bean.setAddress(request.getParameter("address"));
-			bean.setHouseType(request.getParameter("house_type"));
-			bean.setRoom(Integer.parseInt(request.getParameter("room")));
-			bean.setToilet(Integer.parseInt(request.getParameter("toilet")));
-			bean.setBed(Integer.parseInt(request.getParameter("bed")));
-			bean.setCount(Integer.parseInt(request.getParameter("count")));
-			bean.setFacilities(request.getParameter("facilities"));
-			bean.setCheckIn(request.getParameter("check_in"));
-			bean.setCheckOut(request.getParameter("check_out"));
-			bean.setExplain(request.getParameter("explain"));
+			MemberBean member = (MemberBean) request.getSession().getAttribute("user");
+			
 			System.out.println("booking Bean : "+bean);
-			bookservice.regist(bean);
-			Separator.command.setPage("index");
-			Separator.command.setView();
-			DispatcherServlet.send2(request, response, Separator.command);
-			return;
+			
+			if (member!=null) {
+				bean.setId(member.getId());
+				bean.setAddress(request.getParameter("address"));
+				bean.setHouseType(request.getParameter("house_type"));
+				bean.setRoom(Integer.parseInt(request.getParameter("room")));
+				bean.setToilet(Integer.parseInt(request.getParameter("toilet")));
+				bean.setBed(Integer.parseInt(request.getParameter("bed")));
+				bean.setCount(Integer.parseInt(request.getParameter("count")));
+				bean.setFacilities(request.getParameter("facilities"));
+				bean.setCheckIn(request.getParameter("check_in"));
+				bean.setCheckOut(request.getParameter("check_out"));
+				bean.setExplain(request.getParameter("explain"));
+				bookservice.regist(bean);
+				System.out.println("예약함!!!!!!!!");
+				Separator.command.setPage("index");
+				Separator.command.setView();
+				DispatcherServlet.send2(request, response, Separator.command);
+				return;
+			}else{
+				System.out.println("null값 들어옴????");
+				Separator.command.setPage("book");
+				Separator.command.setView();
+			}
+			break;
 		case "delete":
 			bookservice.delete(request.getParameter("address"));
 			Separator.command.setDirectory("member");

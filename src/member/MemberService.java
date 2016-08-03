@@ -9,5 +9,4 @@ public interface MemberService {
 	MemberBean findById(String findID);
 	public void logout(MemberBean member);
 	public MemberBean getSession();
-	public void logoutSession(MemberBean member);
 }

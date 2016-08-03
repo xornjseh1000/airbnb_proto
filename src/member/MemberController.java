@@ -62,11 +62,12 @@ public class MemberController extends HttpServlet {
 		case "logout":
 			bean.setId(service.getSession().getId());
 			bean.setPw(service.getSession().getPw());
-			service.logoutSession(bean);
+
 			Separator.command.setPage("login");
 			Separator.command.setView();
 			session.setAttribute("user", bean);
 			session.setAttribute("logout", bean);
+			session.invalidate();
 			break;
 		case "temp":
 			request.setAttribute("member", service.getSession());

@@ -18,12 +18,6 @@ public class MemberServiceImpl implements MemberService {
 		return session;
 	}
 	
-	public void logoutSession(MemberBean member) {
-		if (member.getId().equals(session.getId()) && member.getPw().equals(session.getPw())) {
-			
-			session = null;
-		}
-	}
 
 	@Override
 	public String regist(MemberBean mBean) {
