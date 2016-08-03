@@ -10,10 +10,12 @@ public class BookTestController {
 	public static void main(String[] args) {
 		BookServiceImpl bService = BookServiceImpl.getInstance();
 		BookBean bBean = new BookBean();
+		BookCityBean bcBean = new BookCityBean();
 
 		while (true) {
 			switch (JOptionPane.showInputDialog("1.숙소검색\n 2.예약\n 3.예약취소 4.예약정보 변경 5로그인")) {
-			case "1":
+			case "1": // 리스트 미완
+				JOptionPane.showMessageDialog(null, bService.search(bcBean));
 				break;
 
 			case "2": // 예약(주소)

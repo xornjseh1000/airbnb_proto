@@ -2,9 +2,38 @@ package book;
 
 public class BookCityBean {
 	public int count, room, toilet, bed;
-	public String address, checkIn,checkOut,wishlist, explain, review, price, 
+	public String address, checkIn,checkOut, explain, review, price, 
 	option, local, facilities, policy, houseType, language, photo;
 	
+	public BookCityBean(int count, int room, int toilet, int bed, String address, String checkIn, 
+			String checkOut, String explain, String review,String price, 
+			String option,String local,String facilities, String policy, String houseType,
+			String language, String photo) {
+		this.count = count;		
+		this.room = room;		
+		this.toilet = toilet;		
+		this.bed = bed;
+		this.address = address;
+		this.checkIn = checkIn;
+		this.checkOut = checkOut;
+		this.explain = explain;
+		this.review = review;
+		this.price = price;
+		this.option = option;
+		this.local = local;
+		this.facilities = facilities;
+		this.policy = policy;
+		this.houseType = houseType;
+		this.language = language;
+		this.photo = photo;
+	}
+	
+	/**
+	 * 
+	 */
+	public BookCityBean() {
+	}
+
 	private int getCount() {
 		return count;
 	}
@@ -46,12 +75,6 @@ public class BookCityBean {
 	}
 	private void setCheckOut(String checkOut) {
 		this.checkOut = checkOut;
-	}
-	private String getWishlist() {
-		return wishlist;
-	}
-	private void setWishlist(String wishlist) {
-		this.wishlist = wishlist;
 	}
 	private String getExplain() {
 		return explain;
@@ -113,5 +136,4 @@ public class BookCityBean {
 	private void setPhoto(String photo) {
 		this.photo = photo;
 	}
-	
 }
