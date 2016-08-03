@@ -6,6 +6,7 @@ public interface BookService {
 	public void book(BookBean bean);
 	public void cancel (BookBean bean);
 	public void regist (BookCityBean bean);
+	public void delete(String address);
 	public void wishlist (BookCityBean bean);
 	public void wishlistDel (BookCityBean bean);
 	public BookCityBean search(BookCityBean bean);

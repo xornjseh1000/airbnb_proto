@@ -15,6 +15,7 @@ create table member(
 update member set pw = '1' , email = '1', phone = '1', address = '1', intro = '1' where id = 'hong';
 delete from member where id ='5';
 select * from member;
+update member set pw ='1' where id = 'hong';
 
 insert into member(id,pw,name,gender,email,birth,phone,address,intro,sns,profile_img) 
 values('hong','1','홍길동','남','hong@test.com','1989,02,22','010-7143-0222','default','default','default','default.jpg');

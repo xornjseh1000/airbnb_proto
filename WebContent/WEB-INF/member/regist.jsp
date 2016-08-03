@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <style>
-#joincenter { position:absolute; top:50%; left:50%; width:380px; height:600px; overflow:hidden; 
- margin-top:-300px; margin-left:-150px;}
+#joincenter { top:50%; left:50%; width:380px; height:600px; overflow:hidden; 
+ margin-left:540px;}
 form {
     border: 3px solid #f1f1f1;
     width: 360px;
@@ -72,7 +72,7 @@ body { margin-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px;
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-  <button type="button" class="cancelbtn"><a href="${context}/member.do?page=login">Login</button>
+  <button type="button" class="cancelbtn"><a href="${context}/member.do?page=login">Login</a></button>
   </div>
 </form>
 </div>

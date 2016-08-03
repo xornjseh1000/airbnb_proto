@@ -47,5 +47,10 @@ public class BookServiceImpl implements BookService{
 	public List<?> list(String id) {
 		return dao.list(id);
 	}
+	@Override
+	public void delete(String address) {
+		dao.delete(address);
+		
+	}
 	
 }

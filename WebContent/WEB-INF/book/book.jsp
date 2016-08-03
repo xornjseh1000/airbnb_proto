@@ -63,10 +63,7 @@ tr:nth-child(even) {
 		-webkit-order: 2;
 		order: 2;
 	}
-	footer {
-		-webkit-order: 3;
-		order: 3;
-	}
+
 }
 
 p {
@@ -88,7 +85,7 @@ p {
   </tr>
   <tr>
     <td rowspan="6">숙소</td>
-    <td>숙박 가능 인원: ${city.count}</td>
+    <td>주소: ${city.address}</td>
     <td></td>
   </tr>
   <tr>
@@ -112,7 +109,7 @@ p {
     
   </tr>
   <tr>
-    <td> </td>
+    <td>숙박 가능 인원: ${city.count}</td>
     <td></td>
   </tr>
    <tr>
@@ -217,6 +214,8 @@ p {
 <input type="submit" value="즉시예약" style="width: 200px">
 </div>
 </form>
+</article>
+</div>
 <jsp:include page="/WEB-INF/global/footer.jsp"/>
 <jsp:include page="/WEB-INF/global/end.jsp"/>
 

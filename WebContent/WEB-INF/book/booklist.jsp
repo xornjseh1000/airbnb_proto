@@ -17,8 +17,9 @@ p{text-align: center;}
 </style>
 <jsp:include page="/WEB-INF/global/top.jsp" />
 <jsp:include page="/WEB-INF/global/nav.jsp" />
-
-	<div style="text-align: center">
+<center><img src="${bookimg}/booklist.jpg" width="1410px" height="400px"></center><br>
+<h2 style="text-align:center">여행하고싶은 여행지를 선택해주세요!</h2><br>
+<div style="text-align: center">
 <table id="list">
 	<tr>
 	    <td>숙소소개</td>
@@ -31,8 +32,7 @@ p{text-align: center;}
 	</tr>
 	<c:forEach var="city" items="${list}">
 	<tr>
-	 
-	
+
 		<td><a href="${context}/book.do?action=find_by&page=book&keyword=${city.address}">${city.explain}</a></td>
 	    <td>${city.address}</td>
 	    <td>${city.houseType}</td>
@@ -46,4 +46,5 @@ p{text-align: center;}
 </c:forEach>
 </table>
 </div>
+<jsp:include page="/WEB-INF/global/footer.jsp"/>
 <jsp:include page="/WEB-INF/global/end.jsp"/>

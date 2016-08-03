@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <style>
-#logincenter { position:absolute; top:50%; left:50%; width:50%; height:50%; overflow:hidden; 
- margin-top:-220px; margin-left:-150px;}
+#logincenter { top:50%; left:50%; width:50%; height:50%; overflow:hidden; 
+margin-left:540px;}
 form {
     border: 3px solid #f1f1f1;
     width: 350px;
@@ -58,7 +58,7 @@ span.psw {
    <button type="submit">Login </button>
   </div>
   <div id="container" style="background-color:#f1f1f1">
-  <button type="button" class="cancelbtn"><a href="${context}/member.do?page=regist">Create an Account</button>
+  <button type="button" class="cancelbtn"><a href="${context}/member.do?page=regist">Create an Account</a></button>
   </div>
 </form>
 </div>

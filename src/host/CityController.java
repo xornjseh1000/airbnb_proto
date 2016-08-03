@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import book.BookService;
+import book.BookServiceImpl;
 import global.DispatcherServlet;
 import global.ParamMap;
 import global.Separator;
@@ -23,6 +25,7 @@ public class CityController extends HttpServlet {
 		HttpSession session = request.getSession();
 		CityBean bean2 = new CityBean();
 		CityService service = CityServiceImpl.getInstance();
+		BookService bookservice = BookServiceImpl.getInstance();
 		MemberService memberService = MemberServiceImpl.getInstance();
 		switch (Separator.command.getAction()) {
 		case "temp":
@@ -66,11 +69,12 @@ public class CityController extends HttpServlet {
 		case "list":
 			request.setAttribute("list", service.list());
 			break;
-		case "perlist":
-			break;
-		case "update":
-			break;
 		case "delete":
+			service.delete(request.getParameter("address"));
+			bookservice.delete(request.getParameter("address"));
+			Separator.command.setDirectory("member");
+			Separator.command.setPage("mypage");
+			Separator.command.setView();
 			break;
 		
 		}

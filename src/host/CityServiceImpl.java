@@ -34,8 +34,8 @@ public class CityServiceImpl implements CityService{
 	}
 
 	@Override
-	public void delete(CityBean bean) {
-		dao.delete(bean);
+	public void delete(String address) {
+		dao.delete(address);
 	}
 	
 	public List<?> list() {

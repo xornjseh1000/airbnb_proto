@@ -68,6 +68,14 @@ public class MemberController extends HttpServlet {
 			session.setAttribute("user", bean);
 			session.setAttribute("logout", bean);
 			break;
+		case "temp":
+			request.setAttribute("member", service.getSession());
+			String[] temp = service.getSession().getAddress().split(",");
+			request.setAttribute("add1", temp[0]);
+			request.setAttribute("add2", temp[1]);
+			request.setAttribute("add3", temp[2]);
+			request.setAttribute("add4", temp[3]);
+			break;
 		case "update":
 			bean.setId(service.getSession().getId());
 			bean.setPw(request.getParameter("pw"));
@@ -81,6 +89,7 @@ public class MemberController extends HttpServlet {
 			Separator.command.setView();
 			DispatcherServlet.send2(request, response, Separator.command);
 			return;
+		
 		case "delete":
 			if (request.getParameter("pw").equals(service.getSession().getPw())) {
 				bean.setId(service.getSession().getId());

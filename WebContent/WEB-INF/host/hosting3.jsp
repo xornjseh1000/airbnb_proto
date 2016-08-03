@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <style type = "text/css">
-#center { position:absolute; top:15%; left:40%; width:400px; height:400px; overflow:hidden;} 
+#center { top:15%; left:40%; width:400px; height:400px; overflow:hidden; margin-left:540px;} 
 .button {
     background-color: #4CAF50; 
     border: none;
@@ -28,6 +28,7 @@
 </style>
 <jsp:include page="/WEB-INF/global/top.jsp" />
 <jsp:include page="/WEB-INF/global/nav.jsp" />
+<center><img src="${hostimg}/starthost.jpg" width="1410px" height="400px"></center>
 <div id="center">
 <form action="${context}/host.do" method="post">
 		<h1 >  주소입력  </h1><br />
@@ -36,7 +37,7 @@
 	     <span class="meta">동을 입력해주세요</span>    <input type="text" name="address3" placeholder = "ex)상암동"/><br /><br />
 		 <span class="meta">이하주소를 입력해주세요</span>    <input type="text" name="address4" placeholder = "ex)월드컵APT 104동 1303호"/><br />
 		<input type="hidden" name="action" value="regist3">
-		 <button type="submit" class="button button2" >완료</button>
+		<button type="submit" class="button button2" style="margin-left:120px; margin-top:50px" >완료</button>
 		 </form>
 		 </div>
 <jsp:include page="/WEB-INF/global/footer.jsp"/>

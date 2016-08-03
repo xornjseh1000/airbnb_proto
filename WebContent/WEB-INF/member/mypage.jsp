@@ -8,14 +8,13 @@ body {
 }
 
 #center {
-	position: absolute;
+	
 	top: 50%;
 	left: 50%;
 	width: 370px;
 	height: 600px;
 	overflow: hidden;
-	margin-top: -300px;
-	margin-left: -150px;
+	margin-left: 540px;
 }
 
 form {
@@ -82,21 +81,21 @@ span.psw {
 <jsp:include page="/WEB-INF/global/nav.jsp" />
 <jsp:include page="mypageframe.jsp" />
 <div id="center">
-		<h2>회원 정보 수정</h2>
+		<h2>회원 정보 수정 </h2>
 	<form action="${context}/member.do" method="post">
 	<label><b>Password</b></label> 
-	<input type="password" placeholder="Enter password" name="pw"><br> 
+	<input type="password" name="pw" value="${member.pw}"><br> 
 	<label><b>Phone</b></label>
-	<input type="text" placeholder="phone" name="phone" value="${user.phone}"><br>
+	<input type="text" name="phone" value="${member.phone}"><br>
 	<label><b>Email</b></label> 
-	<input type="text" placeholder="email" name="email" value="${user.email}"><br> 
+	<input type="text" name="email" value="${member.email}"><br> 
 	<label><b>주소</b></label><br> 
-	<input type="text" placeholder="서울특별시" name="city" style="width: 100px;">
-	<input type="text" placeholder="서대문구" name="gu" style="width: 100px;"> 
-	<input type="text" placeholder="홍은동" name="dong" style="width: 100px;"> 
-	<input type="text" placeholder="나머지 주소" name="bunji" style="width: 340px;"> <br>
+	<input type="text" name="city" value="${add1}" style="width: 100px;">
+	<input type="text" name="gu" value="${add2}" style="width: 100px;"> 
+	<input type="text" name="dong" value="${add3}" style="width: 100px;"> 
+	<input type="text" name="bunji" value="${add4}" style="width: 340px;"> <br>
 	<label><b>자기 소개서</b></label> 
-	<input type="text" placeholder="자기 소개" name="intro" style="height: 60px; width: 340px;" value="${user.intro}"><br> 
+	<input type="text" name="intro" style="height: 60px; width: 340px;" value="${member.intro}"><br> 
 	<input type="hidden" name="action" value="update">
 	<input type="submit" value=" 수정" style="height: 30px; width: 120px;" />
 	 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;

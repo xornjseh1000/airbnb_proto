@@ -33,7 +33,7 @@ p{text-align: center;}
 	<tr>
 	 
 	
-		<td><a href="${context}/book.do?action=find_by&page=book&keyword=${city.address}">${city.explain}</a></td>
+		<td><a href="${context}/book.do?action=find_by&page=hostinglist&keyword=${city.address}">${city.explain}</a></td>
 	    <td>${city.address}</td>
 	    <td>${city.houseType}</td>
 	    <td>${city.room}</td>
@@ -47,4 +47,5 @@ p{text-align: center;}
 </table>
 </div>
 
+<jsp:include page="/WEB-INF/global/footer.jsp"/>
 <jsp:include page="/WEB-INF/global/end.jsp"/>

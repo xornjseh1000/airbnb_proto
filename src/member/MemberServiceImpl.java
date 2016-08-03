@@ -52,6 +52,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public void update(MemberBean mem) {
 		dao.update(mem);
+		session = dao.findById(mem.getId());
 	}
 
 	@Override

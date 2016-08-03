@@ -56,6 +56,12 @@ public class BookController extends HttpServlet {
 			Separator.command.setView();
 			DispatcherServlet.send2(request, response, Separator.command);
 			return;
+		case "delete":
+			bookservice.delete(request.getParameter("address"));
+			Separator.command.setDirectory("member");
+			Separator.command.setPage("mypage");
+			Separator.command.setView();
+			break;
 		}
 		DispatcherServlet.send(request, response, Separator.command);
 	}

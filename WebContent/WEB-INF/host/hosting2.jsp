@@ -24,11 +24,12 @@
     background-color: #008CBA;
     color: white;
 }
-#center { position:absolute; top:10%; left:10%; width:500px; height:700px; overflow:hidden; }
-#center2 { position:absolute; top:10%; left:60%; width:500px; height:700px; overflow:hidden; }
+#center { top:10%; left:10%;  overflow:hidden; margin-left:540px;}
+#center2 { left:60%; overflow:hidden; margin-left:540px;}
 </style>
 <jsp:include page="/WEB-INF/global/top.jsp" />
 <jsp:include page="/WEB-INF/global/nav.jsp" />
+<center><img src="${hostimg}/starthost.jpg" width="1410px" height="400px"></center>
 	<form action="${context}/host.do" method="post">
 	<div id = center>
 	<h1>호스팅 상태를 등록해주세요</h1>
@@ -81,7 +82,7 @@
 	<input type="text" name="explain" /><br/><br/>						
 	<input type="hidden" name="action" value="regist2">
 	<input type="hidden" name="page" value="hosting3">
-	<a href="hosting.jsp"><button class="button button2">이전</button></a>
+	<a href="${context}/"><button class="button button2">이전</button></a>
 	<button type="submit" class="button button2">다음</button>
 	</div>	
 	</form>

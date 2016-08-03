@@ -158,5 +158,15 @@ public class BookDAO {
 		}
 		return list;
 	}
+	public void delete(String address) {
+		String sql = "delete from book_member where address = ?";
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, address);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
 }

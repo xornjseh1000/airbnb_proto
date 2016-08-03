@@ -80,15 +80,13 @@ public class CityDAO {
 			e.printStackTrace();
 		}
 	}
-	public void delete(CityBean bean) {
-		String sql = "delete member where id = ? and pw = ? ";
+	public void delete(String address) {
+		String sql = "delete from city_member where address = ?";
 		try {
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, bean.getId());
-			pstmt.setString(2, bean.getPw());
+			pstmt.setString(1, address);
 			pstmt.executeUpdate();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
