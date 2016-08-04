@@ -73,7 +73,7 @@ p {
 </style>
 <jsp:include page="/WEB-INF/global/top.jsp" />
 <jsp:include page="/WEB-INF/global/nav.jsp" />
-<center><img src="${bookimg}/bnb.png" width="100%" height="50%"></center>
+<center><img src="${bookimg}/bnb.png" width="70%" height="50%"></center>
 <div class="flex-container">
 <nav class="nav">
 <div class="container">
