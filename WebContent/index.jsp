@@ -2,9 +2,9 @@
 <jsp:include page="/WEB-INF/global/top.jsp"/>
 <jsp:include page="/WEB-INF/global/nav.jsp"/>
 <img src="${memberimg}/airbnb_main_back.jpg" alt="" style="width: 100%; height: 100%;">
-<form action="${context}/book.do">
+<form action="${context}/book.do" method="post">
 	<div style="text-align:center">
-		<input type="text" placeholder="떠나고싶은 도시를 검색해주세요" style="width: 500px" name="search"> 
+		<input type="text" placeholder="떠나고싶은 도시를 검색해주세요" style="width: 500px; height:30px" name="search"> 
 		<input type="hidden" name="action" value="search">
 		<input type="submit" value="검색">
 	</div>

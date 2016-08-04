@@ -89,11 +89,19 @@ public class BookController extends HttpServlet {
 				Separator.command.setPage("logout");
 				Separator.command.setView();
 			}else{
-				String temp2 = request.getParameter("search");
-				String[] address2 = temp2.split(",");
-				request.setAttribute("list", bookservice.search(address2[0]));
-				Separator.command.setPage("booklist");
-				Separator.command.setView();
+				if (request.getParameter("search") == "") {
+					Separator.command.setPage("index");
+					Separator.command.setView();
+					DispatcherServlet.send2(request, response, Separator.command);
+					return;
+				}else{
+					System.out.println("실패");
+					String temp2 = request.getParameter("search");
+					String[] address2 = temp2.split(",");
+					request.setAttribute("list", bookservice.search(address2[0]));
+					Separator.command.setPage("booklist");
+					Separator.command.setView();
+				}
 			}
 			break;
 		}
