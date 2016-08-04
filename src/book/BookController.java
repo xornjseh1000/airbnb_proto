@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.websocket.Session;
 
 import global.DispatcherServlet;
 import global.Separator;
@@ -29,6 +28,7 @@ public class BookController extends HttpServlet {
 		MemberBean member = (MemberBean) request.getSession().getAttribute("user");
 		switch (Separator.command.getAction()) {
 		case "booklist":
+			System.out.println("test");
 			if (member == null) {
 				Separator.command.setDirectory("global");
 				Separator.command.setPage("logout");
