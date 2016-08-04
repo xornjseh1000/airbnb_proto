@@ -28,7 +28,7 @@ public class BookController extends HttpServlet {
 		MemberBean member = (MemberBean) request.getSession().getAttribute("user");
 		switch (Separator.command.getAction()) {
 		case "booklist":
-			System.out.println("test....");
+			System.out.println("17:38....");
 			if (member == null) {
 				Separator.command.setDirectory("global");
 				Separator.command.setPage("logout");
