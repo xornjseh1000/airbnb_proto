@@ -209,6 +209,7 @@ p {
 <input type="hidden" value="${city.bed}" name="bed">
 <input type="hidden" value="${city.facilities}" name="facilities">
 <input type="hidden" value="${city.explain}" name="explain">
+<input type="hidden" value="${city.id}" name="id">
 
 <input type="hidden" name="action" value="booking">
 <input type="submit" value="즉시예약" style="width: 200px">
