@@ -6,7 +6,6 @@
 	<div style="text-align:center">
 		<input type="text" placeholder="떠나고싶은 도시를 검색해주세요" style="width: 500px" name="search"> 
 		<input type="hidden" name="action" value="search">
-		<input type="hidden" name="page" value="booklist">
 		<input type="submit" value="검색">
 	</div>
 </form><br><br>

@@ -4,15 +4,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 
 import global.Constants;
 
 public class MemberDAO {
-	Connection con;
-	Statement stmt;
-	PreparedStatement pstmt;
-	ResultSet rs;
+	private Connection con;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
 	private static MemberDAO instance = new MemberDAO();
 	public static MemberDAO getInstance() {
 		return instance;

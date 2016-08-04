@@ -1,11 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <style>
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-}
 
 #center {
 	
@@ -31,16 +25,6 @@ input[type=text], input[type=password] {
 	border: 1px solid #ccc;
 	box-sizing: border-box;
 }
-
-/* button {
-    background-color:#f44336 ;
-    color: white;
-    padding: 10px 10px;
-    margin: 2px 0;
-    border: none;
-    cursor: pointer;
-    width: 300px;
-} */
 .cancelbtn {
 	width: 300px;
 	padding: 10px 10px;
@@ -111,5 +95,5 @@ span.psw {
 	</div>
 	</form>
 	</div>
-	<jsp:include page="/WEB-INF/global/footer.jsp"/>
+<jsp:include page="/WEB-INF/global/footer.jsp"/>
 <jsp:include page="/WEB-INF/global/end.jsp"/>

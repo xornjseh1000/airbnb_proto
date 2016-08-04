@@ -12,13 +12,8 @@ public class Separator {
 	public static Command command;
 	public static Command init(HttpServletRequest request, HttpServletResponse response){
 		String path = request.getServletPath();
-		String temp0 = path.split("/")[0];
-		System.out.println("Separator.java temp0 : "+temp0);
 		String temp = path.split("/")[1];
-		System.out.println("Separator.java temp : " + temp);
 		String directory = temp.substring(0, temp.indexOf("."));
-		System.out.println("Separator.java directory : " + directory);
-		System.out.println("=========================");
 		Enumeration<String> en = request.getParameterNames();
 		List<String> list = new ArrayList<String>();
 			while (en.hasMoreElements()) {

@@ -127,6 +127,4 @@ public class BookCityBean {
 				+ language + ", photo=" + photo + ", id=" + id + "]";
 	}
 	
-	
-	
 }

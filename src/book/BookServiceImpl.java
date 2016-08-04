@@ -14,13 +14,6 @@ public class BookServiceImpl implements BookService{
 	public static BookServiceImpl getInstance() {
 		return instance;
 	}
-	public void book(BookBean bBean) {
-		dao.book(bBean);
-	}
-
-	public void cancel(BookBean bBean) {
-		dao.cancel(bBean);
-	}
 	@Override
 	public void regist(BookCityBean mBean) {
 		dao.regist(mBean);
@@ -38,6 +31,10 @@ public class BookServiceImpl implements BookService{
 	public List<?> search(String address) {
 		System.out.println("impl address : "+address);
 		return dao.search(address);
+	}
+	@Override
+	public BookCityBean check(String address) {
+		return dao.check(address);
 	}
 	
 }

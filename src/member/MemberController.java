@@ -45,7 +45,6 @@ public class MemberController extends HttpServlet {
 			bean.setId(request.getParameter("id"));
 			bean.setPw(request.getParameter("pw"));
 			bean.setMsgLogout("로그아웃");
-			bean.setMsgUpdate("정보수정");
 			service.login(bean);
 			if (bean.getId().equals("fail")) {
 				Separator.command.setPage("login");
@@ -54,29 +53,42 @@ public class MemberController extends HttpServlet {
 				Separator.command.setPage("index");
 				Separator.command.setView();
 				session.setAttribute("user", bean);
-				session.setAttribute("logout", bean);
+				session.setAttribute("mypage", service.findById(bean.getId()));
 				DispatcherServlet.send2(request, response, Separator.command);
 				return;
 			}
 			break;
 		case "logout":
-			bean.setId(service.getSession().getId());
-			bean.setPw(service.getSession().getPw());
-
-			Separator.command.setPage("login");
-			Separator.command.setView();
-			session.setAttribute("user", bean);
-			session.setAttribute("logout", bean);
-			session.invalidate();
+			if (request.getSession().getAttribute("user") == null) {
+				Separator.command.setPage("index");
+				Separator.command.setView();
+				DispatcherServlet.send2(request, response, Separator.command);
+				return;
+			}else{
+				Separator.command.setPage("login");
+				Separator.command.setView();
+				session.setAttribute("user", bean);
+				session.setAttribute("logout", bean);
+				session.invalidate();
+			}
 			break;
-		case "temp":
-			request.setAttribute("member", service.getSession());
-			String[] temp = service.getSession().getAddress().split(",");
-			request.setAttribute("add1", temp[0]);
-			request.setAttribute("add2", temp[1]);
-			request.setAttribute("add3", temp[2]);
-			request.setAttribute("add4", temp[3]);
-			break;
+		case "mypage":
+			if (request.getSession().getAttribute("user") == null) {
+				Separator.command.setPage("index");
+				Separator.command.setView();
+				DispatcherServlet.send2(request, response, Separator.command);
+				return;
+			}else{
+				Separator.command.setPage("mypage");
+				Separator.command.setView();
+				request.setAttribute("member", service.getSession());
+				String[] temp = service.getSession().getAddress().split(",");
+				request.setAttribute("add1", temp[0]);
+				request.setAttribute("add2", temp[1]);
+				request.setAttribute("add3", temp[2]);
+				request.setAttribute("add4", temp[3]);
+				break;
+			}
 		case "update":
 			bean.setId(service.getSession().getId());
 			bean.setPw(request.getParameter("pw"));
@@ -109,7 +121,6 @@ public class MemberController extends HttpServlet {
 			return;
 		case"mybook":
 			request.setAttribute("list", bookservice.list(service.getSession().getId()));
-			System.out.println("아이디 뭐임?? : "+service.getSession().getId());
 			break;
 		case"myhost":
 			request.setAttribute("list", hostservice.myhost(service.getSession().getId()));

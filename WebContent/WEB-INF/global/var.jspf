@@ -8,5 +8,6 @@
    <c:set var="guideimg" value="${context}/resources/img/guide"/>
    <c:set var="bookimg" value="${context}/resources/img/book"/>
    <c:set var="hostimg" value="${context}/resources/img/host"/>
+   <c:set var="img" value="${context}/resources/img"/>
    <c:set var="css" value="${context}/resources/css"/>
    

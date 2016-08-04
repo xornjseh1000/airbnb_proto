@@ -10,9 +10,6 @@ public class CityBean implements Serializable{
 	public int getRoom() {
 		return room;
 	}
-	
-	
-	
 	public int getSeq() {
 		return seq;
 	}
@@ -121,9 +118,6 @@ public class CityBean implements Serializable{
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-
-
-
 	@Override
 	public String toString() {
 		return "CityBean [room=" + room + ", toilet=" + toilet + ", bed=" + bed + ", count=" + count + ", seq=" + seq
@@ -132,6 +126,6 @@ public class CityBean implements Serializable{
 				+ ", houseType=" + houseType + ", language=" + language + ", photo=" + photo + ", id=" + id + ", pw="
 				+ pw + "]";
 	}
-
-
+	
+	
 }

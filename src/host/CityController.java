@@ -14,6 +14,7 @@ import book.BookServiceImpl;
 import global.DispatcherServlet;
 import global.ParamMap;
 import global.Separator;
+import member.MemberBean;
 import member.MemberService;
 import member.MemberServiceImpl;
 
@@ -27,16 +28,15 @@ public class CityController extends HttpServlet {
 		CityService service = CityServiceImpl.getInstance();
 		BookService bookservice = BookServiceImpl.getInstance();
 		MemberService memberService = MemberServiceImpl.getInstance();
+		MemberBean member = (MemberBean) request.getSession().getAttribute("user");
 		switch (Separator.command.getAction()) {
 		case "temp":
-			if (memberService.getSession() != null) {
-				System.out.println("2");
-				Separator.command.setPage("hosting");
+			if (member == null) {
+				Separator.command.setDirectory("global");
+				Separator.command.setPage("logout");
 				Separator.command.setView();
 			}else{
-				System.out.println("1");
-				Separator.command.setDirectory("member");
-				Separator.command.setPage("login");
+				Separator.command.setPage("hosting");
 				Separator.command.setView();
 			}
 			break;
@@ -72,10 +72,10 @@ public class CityController extends HttpServlet {
 		case "delete":
 			service.delete(request.getParameter("address"));
 			bookservice.delete(request.getParameter("address"));
-			Separator.command.setDirectory("member");
-			Separator.command.setPage("mypage");
+			Separator.command.setPage("index");
 			Separator.command.setView();
-			break;
+			DispatcherServlet.send2(request, response, Separator.command);
+			return;
 		
 		}
 		

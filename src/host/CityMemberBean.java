@@ -147,14 +147,4 @@ public class CityMemberBean {
 	public void setProfileImg(String profileImg) {
 		this.profileImg = profileImg;
 	}
-	@Override
-	public String toString() {
-		return "CityMemberBean [room=" + room + ", toilet=" + toilet + ", bed=" + bed + ", explain=" + explain
-				+ ", review=" + review + ", price=" + price + ", option=" + option + ", local=" + local
-				+ ", facilities=" + facilities + ", policy=" + policy + ", houseType=" + houseType + ", language="
-				+ language + ", photo=" + photo + ", id=" + id + ", pw=" + pw + ", name=" + name + ", gender=" + gender
-				+ ", email=" + email + ", birth=" + birth + ", phone=" + phone + ", address=" + address + ", intro="
-				+ intro + ", sns=" + sns + ", profileImg=" + profileImg + "]";
-	}
-	
 }

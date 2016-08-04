@@ -18,7 +18,8 @@ p{text-align: center;}
 <jsp:include page="/WEB-INF/global/top.jsp" />
 <jsp:include page="/WEB-INF/global/nav.jsp" />
 <center><img src="${bookimg}/booklist.jpg" width="1410px" height="400px"></center><br>
-<h2 style="text-align:center">여행하고싶은 여행지를 선택해주세요!</h2><br>
+<h1 style="text-align:center">이미 다른 사용자에 의해 예약된 숙소입니다.</h1><br>
+<h2 style="text-align:center">다른 숙소 예약하기</h2><br>
 <div style="text-align: center">
 <table id="list">
 	<tr>

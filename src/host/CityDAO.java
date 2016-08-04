@@ -1,11 +1,9 @@
 package host;
 
-import java.beans.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,12 +11,13 @@ import global.Constants;
 
 
 public class CityDAO {
-	Connection con;
-	Statement stmt;
-	PreparedStatement pstmt;
-	ResultSet rs;
-	
+	private Connection con;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
 	private static CityDAO instance = new CityDAO();
+	public static CityDAO getInstance() {
+		return instance;
+	}
 	private CityDAO() {
 		try {
 			Class.forName(Constants.ORACLE_DRIVER);
@@ -26,9 +25,6 @@ public class CityDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-	public static CityDAO getInstance() {
-		return instance;
 	}
 	public void insert(CityBean bean) {
 		String sql = "insert into city_member(seq,address,explain,review,price,option2,local2,facilities,policy,house_type,language,photo,room,toilet,bed,count,id) values(seq.nextval,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -56,30 +52,6 @@ public class CityDAO {
 			e.printStackTrace();
 		}
 	}
-	public void update(CityBean bean) {
-		String sql = "update city set address=?, explain=?, review=?, price=?, option2=?, local2=?, facilities=?, policy=?, house_type=?, language=?, photo=?, room=?, toilet=?, bed=? where id=?";
-		try {
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, bean.getAddress());
-			pstmt.setString(2, bean.getExplain());
-			pstmt.setString(3, bean.getReview());
-			pstmt.setString(4, bean.getPrice());
-			pstmt.setString(5, bean.getOption());
-			pstmt.setString(6, bean.getLocal());
-			pstmt.setString(7, bean.getFacilities());
-			pstmt.setString(8, bean.getPolicy());
-			pstmt.setString(9, bean.getHouseType());
-			pstmt.setString(10, bean.getLanguage());
-			pstmt.setString(11, bean.getPhoto());
-			pstmt.setInt(12, bean.getRoom());
-			pstmt.setInt(13, bean.getToilet());
-			pstmt.setInt(14, bean.getBed());
-			pstmt.setString(15, bean.getId());
-			pstmt.executeUpdate();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 	public void delete(String address) {
 		String sql = "delete from city_member where address = ?";
 		try {
@@ -90,7 +62,6 @@ public class CityDAO {
 			e.printStackTrace();
 		}
 	}
-	
 	public List<CityBean> list() {
 		String sql = "select * from city_member";
 		List<CityBean> list = new ArrayList<CityBean>();
@@ -118,7 +89,6 @@ public class CityDAO {
 				list.add(bean);
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return list;
@@ -183,7 +153,6 @@ public class CityDAO {
 				list.add(bean);
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return list;

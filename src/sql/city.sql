@@ -2,9 +2,7 @@ create sequence seq
 increment by 1
 start with 1000
 nocycle;
-
-drop sequence seq; 
-
+==============================================
 create table city(
 	seq number constraint city_pk primary key,
 	address varchar2(100),
@@ -26,54 +24,7 @@ create table city(
 	constraint city_member_fk foreign key (id)
 	references member(id) on delete cascade 
 );
-
-create view book_city as
-select
-from book b,city c
-
-select * from city;
-select * from book;
-drop table city;
-  
-insert into city(
-address,
-explain,
-review,
-price,
-option2,
-local2,
-facilities,
-policy,
-house_type,
-language,
-photo,
-room,
-toilet,
-bed,
-id) 
-values('서울시,중랑구,신내동,중앙하이츠아파트,2동,1511호',
-'우리동네',
-'default',
-'500000',
-'direct',
-'신내동',
-'default',
-'default',
-'apart',
-'korean',
-'default.jpg',
-'1',
-'2',
-'2',
-'hong');
-
-
-
-
-
-==================
-
-
+===============================================
 create view city_member as
 select
 	c.seq,
@@ -95,18 +46,6 @@ select
 	m.id
 from member m, city c
 where m.id = c.id;
-
-drop view city_member;
+===========================================================
 select * from city_member;
-select * from city_member where address = '서울시,마포구,상암동,월드컵APT';
-create view wishlist as
-select 
-b.address,
-b.check_in,
-b.check_out,
-b.count,
-m.id
-from member m, book b
-where m.id = b.id;
-
 delete from city_member where id ='hong';

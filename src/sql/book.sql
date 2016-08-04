@@ -2,7 +2,7 @@ create sequence seq2
 increment by 1
 start with 1000
 nocycle;
-
+==============================================
 create table book(
 	seq2 number constraint book_pk primary key,
 	address varchar2(100),
@@ -26,12 +26,7 @@ create table book(
 	constraint book_member_fk foreign key (id)
 	references member(id) on delete cascade
 );
-drop view book_member;
-
-
-select * from book;
-select * from book_member;
-
+==============================================
 create view book_member as
 select 
 	b.seq2,
@@ -55,19 +50,7 @@ select
 	m.id
 from member m, book b
 where m.id = b.id;
-
-select * from city_member where address like '서울시%';
-
-
- SELECT distinct regexp_substr(A.TXT, '[^,]+', 1, LEVEL) TXT
-   FROM (SELECT '서울시,중랑구,신내동,좋은 집' TXT FROM dual) A
-CONNECT BY LEVEL <= length(regexp_replace(A.TXT, '[^|]+',''))+1
-;
-
-select distinct city_member
-
-select id,SUBSTRING(name,0,charindex(',',name))as firstname
-,SUBSTRING(name,charindex(',',name),len(name)+1)as lastname from spilt
-
+===========================================================
 delete from book_member where id = 'hong';
-
+select * from book_member;
+select * from book_member where address = '서울시,마포구,상암동,월드컵 APT';

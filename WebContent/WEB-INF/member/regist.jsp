@@ -43,7 +43,6 @@ span.psw {
     float: right;
     padding-top: 10px;
 }
-body { margin-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; }
 </style>
 <jsp:include page="/WEB-INF/global/top.jsp" />
 <jsp:include page="/WEB-INF/global/nav.jsp" />
@@ -54,7 +53,7 @@ body { margin-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px;
    <label><b>ID</b></label><br>
     <input type="text" placeholder="Enter ID" name="id" required><br>
   
-    <label><b>Username</b></label><br>
+    <label><b>User name</b></label><br>
     <input type="text" placeholder="Enter Username" name="name" required><br>
 
     <label><b>Password</b></label>
@@ -72,7 +71,7 @@ body { margin-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px;
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-  <button type="button" class="cancelbtn"><a href="${context}/member.do?page=login">Login</a></button>
+  <a href="${context}/member.do?page=login"><button type="button" class="cancelbtn">Login</button></a>
   </div>
 </form>
 </div>
