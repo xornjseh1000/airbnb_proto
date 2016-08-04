@@ -63,7 +63,7 @@ span.psw {
 </style>
 <jsp:include page="/WEB-INF/global/top.jsp" />
 <jsp:include page="/WEB-INF/global/nav.jsp" />
-<jsp:include page="mypageframe.jsp" />
+<jsp:include page="mypageframe.jsp"/>
 <div id="center">
 		<h2>회원 정보 수정 </h2>
 	<form action="${context}/member.do" method="post">
@@ -74,10 +74,10 @@ span.psw {
 	<label><b>Email</b></label> 
 	<input type="text" name="email" value="${member.email}"><br> 
 	<label><b>주소</b></label><br> 
-	<input type="text" name="city" value="${add1}" style="width: 100px;">
-	<input type="text" name="gu" value="${add2}" style="width: 100px;"> 
-	<input type="text" name="dong" value="${add3}" style="width: 100px;"> 
-	<input type="text" name="bunji" value="${add4}" style="width: 340px;"> <br>
+	<input type="text" name="city" value="${member.address.split(",")[0]}" style="width: 100px;">
+	<input type="text" name="gu" value="${member.address.split(",")[1]}" style="width: 100px;"> 
+	<input type="text" name="dong" value="${member.address.split(",")[2]}" style="width: 100px;"> 
+	<input type="text" name="bunji" value="${member.address.split(",")[3]}" style="width: 340px;"> <br>
 	<label><b>자기 소개서</b></label> 
 	<input type="text" name="intro" style="height: 60px; width: 340px;" value="${member.intro}"><br> 
 	<input type="hidden" name="action" value="update">

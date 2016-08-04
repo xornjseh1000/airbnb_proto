@@ -28,7 +28,7 @@
 </style>
 <jsp:include page="/WEB-INF/global/top.jsp" />
 <jsp:include page="/WEB-INF/global/nav.jsp" />
-<center><img src="${hostimg}/starthost.jpg" width="1410px" height="400px"></center>
+<center><img src="${hostimg}/starthost.jpg" width="100%" height="50%"></center>
 <div id="center">
 <form action="${context}/host.do" method="post">
 		<h1 >  주소입력  </h1><br />

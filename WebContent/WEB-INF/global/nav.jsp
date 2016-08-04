@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <style>
-ul {
+ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -36,7 +36,7 @@ li a:hover:not(.active) {
 <ul>
 <a href="${context}/global.do?page=index"><img src="${globalimg}/airbnb.png" height="50px" width="100px"></a>
 <li style="float:right"><a href="${context}/member.do?action=logout">${user.msgLogout}</a></li>
-<li style="float:right"><a href="${context}/member.do?action=mypage">${mypage.name}</a></li>
+<li style="float:right"><a href="${context}/member.do?action=mypage">${user.name}</a></li>
 <li style="float:right"><a href="${context}/member.do?page=login">로그인</a></li>
 <li style="float:right"><a href="${context}/member.do?page=regist">회원가입</a></li>
 <li style="float:right"><a href="${context}/global.do?action=helpcenter&page=helpcenter">도움말</a></li>

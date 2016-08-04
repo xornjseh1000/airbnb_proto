@@ -17,7 +17,7 @@ p{text-align: center;}
 </style>
 <jsp:include page="/WEB-INF/global/top.jsp" />
 <jsp:include page="/WEB-INF/global/nav.jsp" />
-<center><img src="${bookimg}/booklist.jpg" width="1410px" height="400px"></center><br>
+<center><img src="${bookimg}/booklist.jpg" width="100%" height="50%"></center><br>
 <h2 style="text-align:center">여행하고싶은 여행지를 선택해주세요!</h2><br>
 <div style="text-align: center">
 <table id="list">

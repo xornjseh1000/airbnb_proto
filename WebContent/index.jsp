@@ -10,7 +10,7 @@
 	</div>
 </form><br><br>
 <div style="text-align:center">
-<a href="${context}/host.do?action=temp"><img src="${globalimg}/gohosting.jpg"/></a>
+<a href="${context}/host.do?action=temp"><img src="${globalimg}/gohosting.jpg" alt="" style="width:70%; height:70%;"></a>
 </div>
 <jsp:include page="/WEB-INF/global/guide.jsp"/>
 <jsp:include page="/WEB-INF/global/footer.jsp"/>

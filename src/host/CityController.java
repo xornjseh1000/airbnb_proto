@@ -41,10 +41,9 @@ public class CityController extends HttpServlet {
 			}
 			break;
 		case "regist":
-			bean2.setId(memberService.getSession().getId());
+			bean2.setId((String) session.getAttribute("id"));
 			bean2.setHouseType(request.getParameter("housetype"));
 			session.setAttribute("regBean", bean2);
-			System.out.println("첫번째 regist : "+bean2);
 			break;
 		case "regist2":
 			bean2 = (CityBean) session.getAttribute("regBean");
@@ -54,7 +53,6 @@ public class CityController extends HttpServlet {
 			bean2.setToilet(Integer.parseInt(request.getParameter("toilet")));
 			bean2.setFacilities(ParamMap.getValues(request, "facilities"));
 			bean2.setExplain(request.getParameter("explain"));
-			System.out.println("두번째 regist : "+bean2);
 			break;
 		case "regist3":
 			bean2 = (CityBean) session.getAttribute("regBean");

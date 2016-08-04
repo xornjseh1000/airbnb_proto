@@ -28,7 +28,7 @@
 </style>
 <jsp:include page="/WEB-INF/global/top.jsp" />
 <jsp:include page="/WEB-INF/global/nav.jsp" />
-<center><img src="${hostimg}/starthost.jpg" width="1410px" height="400px"></center>
+<center><img src="${hostimg}/starthost.jpg" width="100%" height="50%"></center>
 	<div id = center>
 	
 	<span class = "meta"><h1>어떤 유형의 숙소인가요?</h1></span>	<br/>

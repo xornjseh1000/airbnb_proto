@@ -72,7 +72,7 @@ p {
 <jsp:include page="/WEB-INF/global/top.jsp" />
 <jsp:include page="/WEB-INF/global/nav.jsp" />
 <jsp:include page="../member/mypageframe.jsp" />
-<center><img src="${bookimg}/bnb.png" width="900px" height="400px"></center>
+<center><img src="${bookimg}/bnb.png" width="70%" height="50%"></center>
 <div class="flex-container">
 <nav class="nav">
 <div class="container">

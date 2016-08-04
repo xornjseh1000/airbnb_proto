@@ -69,6 +69,7 @@ public class MemberDAO {
 				temp.setAddress(rs.getString("ADDRESS"));
 				temp.setIntro(rs.getString("INTRO"));
 				temp.setSns(rs.getString("SNS"));
+				temp.setMsgLogout("로그아웃");
 				temp.setProfileImg(rs.getString("PROFILE_IMG"));
 			}
 		} catch (Exception e) {

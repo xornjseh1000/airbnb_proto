@@ -29,7 +29,7 @@
 </style>
 <jsp:include page="/WEB-INF/global/top.jsp" />
 <jsp:include page="/WEB-INF/global/nav.jsp" />
-<center><img src="${hostimg}/starthost.jpg" width="1410px" height="400px"></center>
+<center><img src="${hostimg}/starthost.jpg" width="100%" height="50%"></center>
 	<form action="${context}/host.do" method="post">
 	<div id = center>
 	<h1>호스팅 상태를 등록해주세요</h1>
